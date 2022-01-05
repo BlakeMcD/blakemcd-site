@@ -1,0 +1,70 @@
+.parent {
+    background-color: hsla(200, 100%, 20%);
+    height: 400px;
+    position: relative;
+    /* width: 400px; */
+}
+
+.child-1 {
+    background-color: red;
+    height: 50%;
+    width: 25%;
+    position: absolute;
+    left: 0%;
+}
+
+.child-2 {
+    background-color: yellow;
+    height: 50%;
+    width: 25%;
+    position: absolute;
+    left: 25%;
+}
+
+.child-3 {
+    background-color: green;
+    height: 50%;
+    width: 25%;
+    position: absolute;
+    left: 50%;
+}
+
+.child-4 {
+    background-color: blue;
+    height: 50%;
+    width: 25%;
+    position: absolute;
+    left: 75%;
+}
+
+
+.parent:hover .child-1 {
+     animation: up-to-down-then-expand 1s ease-in-out forwards;
+}
+
+@keyframes up-to-down-then-expand {
+    50% {
+        transform: translateY(200%);
+        width: 50%;
+    }
+    100% {
+     transform: translateY(100%);
+     width: 1000px;
+     
+    }
+}
+
+.parent:not(:hover) .child-1 {
+     animation: up-to-down-then-expand-reverse 1s ease-in-out reverse;
+}
+
+@keyframes up-to-down-then-expand-reverse {
+    50% {
+        transform: translateY(200%);
+        width: 50%;
+    }
+    100% {
+     transform: translateY(100%);
+     width: 1000px;
+    }
+}
