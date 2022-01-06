@@ -1,0 +1,232 @@
+.grandparent {
+    background-color: hsla(200, 100%, 20%);
+    height: 200px;
+    position: relative;
+    /* width: 400px; */
+}
+
+.parent-1 {
+    background-color: darkred;
+    height:100%;
+    width: 25%;
+    position: absolute;
+    left: 0%;
+}
+
+.parent-1__child {
+    background-color: red;
+    height:100%;
+    width: 100%;
+    position: absolute;
+    left: 0%;
+}
+
+.parent-2 {
+    background-color: gold;
+    height:100%;
+    width: 25%;
+    position: absolute;
+    left: 25%;
+}
+
+.parent-2__child {
+    background-color: yellow;
+    height:100%;
+    width: 100%;
+    position: absolute;
+}
+
+.parent-3 {
+    background-color: darkgreen;
+    height:100%;
+    width: 25%;
+    position: absolute;
+    left: 50%;
+}
+
+.parent-3__child {
+    background-color: green;
+    height:100%;
+    width: 100%;
+    position: absolute;
+}
+
+.parent-4 {
+    background-color: darkblue;
+    height:100%;
+    width: 25%;
+    position: absolute;
+    left: 75%;
+}
+
+.parent-4__child {
+    background-color: blue;
+    height:100%;
+    width: 100%;
+    position: absolute;
+}
+
+
+.parent-1:hover .parent-1__child {
+     animation: up-to-down-then-expand-parent-1__child 1s ease-in-out forwards;
+}
+
+@keyframes up-to-down-then-expand-parent-1__child {
+    50% {
+        transform: translateY(200%);
+        width: 100%; 
+    }
+    100% {
+     transform: translateY(200%);
+     width: 400%;    
+    }
+}
+
+.parent-1:not(:hover) .parent-1__child {
+    animation: up-to-down-then-expand-reverse-parent-1__child 1s ease-in-out reverse;
+}
+
+@keyframes up-to-down-then-expand-reverse-parent-1__child {
+   50% {
+       transform: translateY(200%);
+       width: 100%;
+   }
+   100% {
+    transform: translateY(200%);
+    width: 400%;
+   }
+} 
+
+.parent-2:hover .parent-2__child {
+    animation: up-to-down-then-expand-parent-2__child 1s ease-in-out forwards;
+}
+
+@keyframes up-to-down-then-expand-parent-2__child {
+   50% {
+       transform: translateY(200%);
+       width: 100%;
+       left: 0%;
+   }
+   100% {
+    left: -100%;
+    transform: translateY(200%);
+    width: 400%;  
+   }
+}
+
+.parent-2:not(:hover) .parent-2__child {
+    animation: up-to-down-then-expand-reverse-parent-2__child 1s ease-in-out reverse;
+}
+
+@keyframes up-to-down-then-expand-reverse-parent-2__child {
+   50% {
+       transform: translateY(200%);
+       width: 100%;
+       left: 0%;
+   }
+   100% {
+       left: -100%;
+    transform: translateY(200%);
+    width: 400%;
+   }
+} 
+
+.parent-3:hover .parent-3__child {
+    animation: up-to-down-then-expand-parent-3__child 1s ease-in-out forwards;
+}
+
+@keyframes up-to-down-then-expand-parent-3__child {
+   50% {
+       transform: translateY(200%);
+       width: 100%;
+       left: 0%;
+   }
+   100% {
+    left: -200%;
+    transform: translateY(200%);
+    width: 400%;
+   }
+}
+
+.parent-3:not(:hover) .parent-3__child {
+    animation: up-to-down-then-expand-reverse-parent-3__child 1s ease-in-out reverse;
+}
+
+@keyframes up-to-down-then-expand-reverse-parent-3__child {
+   50% {
+       transform: translateY(200%);
+       width: 100%;
+       left: 0%;
+   }
+   100% {
+       left: -200%;
+    transform: translateY(200%);
+    width: 400%;
+   }
+} 
+
+.parent-4:hover .parent-4__child {
+    animation: up-to-down-then-expand-parent-4__child 1s ease-in-out forwards;
+}
+
+@keyframes up-to-down-then-expand-parent-4__child {
+   50% {
+       transform: translateY(200%);
+       width: 100%;
+       left: 0%;
+   }
+   100% {
+    left: -300%;
+    transform: translateY(200%);
+    width: 400%;
+   }
+}
+
+.parent-4:not(:hover) .parent-4__child {
+    animation: up-to-down-then-expand-reverse-parent-4__child 1s ease-in-out reverse;
+}
+
+@keyframes up-to-down-then-expand-reverse-parent-4__child {
+   50% {
+       transform: translateY(200%);
+       width: 100%;
+       left: 0%;
+   }
+   100% {
+       left: -300%;
+    transform: translateY(200%);
+    width: 400%;
+   }
+}
+
+/* 
+.parent:hover .child-2 {
+    animation: up-to-down-then-expand 1s ease-in-out forwards;
+}
+
+@keyframes up-to-down-then-expand {
+   50% {
+       transform: translateY(200%);
+       width: 25%;
+   }
+   100% {
+    transform: translateY(200%);
+    width: 100%;
+    
+   }
+}
+
+.parent:not(:hover) .child-1 {
+     animation: up-to-down-then-expand-reverse 1s ease-in-out reverse;
+}
+
+@keyframes up-to-down-then-expand-reverse {
+    50% {
+        transform: translateY(100%);
+        width: 25%;
+    }
+    100% {
+     transform: translateY(100%);
+     width: 1000px;
+    }
+} */
