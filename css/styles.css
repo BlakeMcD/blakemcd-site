@@ -67,7 +67,7 @@
 }
 
 
-.parent-1:hover .parent-1__child {
+.parent-1Activated .parent-1__child {
      animation: up-to-down-then-expand-parent-1__child 1s ease-in-out forwards;
 }
 
@@ -82,7 +82,7 @@
     }
 }
 
-.parent-1:not(:hover) .parent-1__child {
+.parent-1DisActivated .parent-1__child {
     animation: up-to-down-then-expand-reverse-parent-1__child 1s ease-in-out reverse;
 }
 
