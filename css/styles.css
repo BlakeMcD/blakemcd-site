@@ -1,3 +1,7 @@
+* {
+    margin: 0px;
+}
+
 .grandparent {
     background-color: hsla(200, 100%, 20%);
     height: 200px;
