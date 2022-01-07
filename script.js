@@ -21,6 +21,8 @@ grandparent.addEventListener('click', () => {
 
 // CLICK ON PARENT ICON
 parent1.addEventListener('click', () => {
+
+    //trigger animation
     if (parentClicked === 0) {
     parentClicked = 1;
     console.log("click registered"+`${parentClicked}`);
@@ -52,6 +54,27 @@ parent1.addEventListener('click', () => {
         parent1.classList.remove("parent-1Activated");
         parent1.classList.add("parent-1DisActivated");
     }
+
+    //create text
+    let textSection = document.getElementById("textSection");
+    textSection.innerHTML = "";
+
+    let content = document.createElement("div")
+
+    //header
+    let contentHeader = document.createElement("h2")
+    let contentHeaderText = document.createTextNode("About Me")
+    contentHeader.appendChild(contentHeaderText);
+    content.appendChild(contentHeader);
+
+    //body
+    let contentBody = document.createElement("p");
+    let contentBodyText = document.createTextNode("I'm a real-life person");
+    contentBody.appendChild(contentBodyText);
+    content.appendChild(contentBody);
+
+    textSection.appendChild(content);
+
 })
 
 parent2.addEventListener('click', () => {
@@ -123,7 +146,7 @@ parent3.addEventListener('click', () => {
 })
 
 parent4.addEventListener('click', () => {
-    if (parentClicked !== 4) {
+    if (parentClicked === 0) {
     parentClicked = 4;
     console.log("click registered"+`${parentClicked}`);
     heading.innerHTML="It's working!";

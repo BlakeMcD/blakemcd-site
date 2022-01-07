@@ -2,6 +2,14 @@
     margin: 0px;
 }
 
+/* TEXT SECTION */
+
+.textSection {
+    font-size: larger;
+    position: relative;
+    color: black;
+}
+
 .grandparent {
     background-color: hsla(200, 100%, 20%);
     height: 200px;
