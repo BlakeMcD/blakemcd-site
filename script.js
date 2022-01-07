@@ -24,3 +24,51 @@ parent1.addEventListener('click', () => {
         parent1.classList.add("parent-1DisActivated");
     }
 })
+
+parent2.addEventListener('click', () => {
+    if (parentClicked !== 2) {
+    parentClicked = 2;
+    console.log("click registered"+`${parentClicked}`);
+    heading.innerHTML="It's working!";
+    parent2.classList.add("parent-2Activated");
+    parent2.classList.remove("parent-2DisActivated");
+    }
+    else {
+        parentClicked = 0;
+        console.log("click registered"+`${parentClicked}`);
+        parent2.classList.remove("parent-2Activated");
+        parent2.classList.add("parent-2DisActivated");
+    }
+})
+
+parent3.addEventListener('click', () => {
+    if (parentClicked !== 2) {
+    parentClicked = 2;
+    console.log("click registered"+`${parentClicked}`);
+    heading.innerHTML="It's working!";
+    parent3.classList.add("parent-3Activated");
+    parent3.classList.remove("parent-3DisActivated");
+    }
+    else {
+        parentClicked = 0;
+        console.log("click registered"+`${parentClicked}`);
+        parent3.classList.remove("parent-3Activated");
+        parent3.classList.add("parent-3DisActivated");
+    }
+})
+
+parent4.addEventListener('click', () => {
+    if (parentClicked !== 2) {
+    parentClicked = 2;
+    console.log("click registered"+`${parentClicked}`);
+    heading.innerHTML="It's working!";
+    parent4.classList.add("parent-4Activated");
+    parent4.classList.remove("parent-4DisActivated");
+    }
+    else {
+        parentClicked = 0;
+        console.log("click registered"+`${parentClicked}`);
+        parent4.classList.remove("parent-4Activated");
+        parent4.classList.add("parent-4DisActivated");
+    }
+})

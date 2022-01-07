@@ -97,7 +97,7 @@
    }
 } 
 
-.parent-2:hover .parent-2__child {
+.parent-2Activated .parent-2__child {
     animation: up-to-down-then-expand-parent-2__child 1s ease-in-out forwards;
 }
 
@@ -114,7 +114,7 @@
    }
 }
 
-.parent-2:not(:hover) .parent-2__child {
+.parent-2DisActivated .parent-2__child {
     animation: up-to-down-then-expand-reverse-parent-2__child 1s ease-in-out reverse;
 }
 
@@ -131,7 +131,7 @@
    }
 } 
 
-.parent-3:hover .parent-3__child {
+.parent-3Activated .parent-3__child {
     animation: up-to-down-then-expand-parent-3__child 1s ease-in-out forwards;
 }
 
@@ -148,7 +148,7 @@
    }
 }
 
-.parent-3:not(:hover) .parent-3__child {
+.parent-3DisActivated .parent-3__child {
     animation: up-to-down-then-expand-reverse-parent-3__child 1s ease-in-out reverse;
 }
 
@@ -165,7 +165,7 @@
    }
 } 
 
-.parent-4:hover .parent-4__child {
+.parent-4Activated .parent-4__child {
     animation: up-to-down-then-expand-parent-4__child 1s ease-in-out forwards;
 }
 
@@ -182,7 +182,7 @@
    }
 }
 
-.parent-4:not(:hover) .parent-4__child {
+.parent-4DisActivated .parent-4__child {
     animation: up-to-down-then-expand-reverse-parent-4__child 1s ease-in-out reverse;
 }
 
