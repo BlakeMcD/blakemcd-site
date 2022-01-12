@@ -2,6 +2,34 @@
     margin: 0px;
 }
 
+/* TEXT SECTION */
+
+.textSection {
+    font-size: larger;
+    position: relative;
+    color: black;
+}
+
+/* .textSection__content {
+    position: absolute;
+} */
+
+.about {
+    position: absolute;
+}
+
+.projects {
+    position: absolute;
+}
+
+.experience {
+    position: absolute;
+}
+
+.contact {
+    position: absolute;
+}
+
 .grandparent {
     background-color: hsla(200, 100%, 20%);
     height: 200px;

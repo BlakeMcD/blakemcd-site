@@ -1,0 +1,22 @@
+    //create text
+    // let textSection = document.getElementById("textSection");
+    // textSection.innerHTML = "";
+
+    // let content = document.createElement("div")
+
+    // //header
+    // // let contentHeader = document.createElement("h2")
+    // // let contentHeaderText = document.createTextNode("About Me")
+    // // contentHeader.appendChild(contentHeaderText);
+    // // content.appendChild(contentHeader);
+
+    // //body
+    // let contentBody = document.createElement("div");
+    // // let contentBodyText = document.createTextNode("I'm a real-life person");
+    // let contentBodyText =   `<h1>This is the heading 1</h1>
+    //                         <h2>And this is heading 2</h2>
+    //                             <p>and this is a paragraph</p>`   
+    // contentBody.appendChild(contentBodyText);
+    // content.appendChild(contentBody);
+
+    // textSection.appendChild(content);

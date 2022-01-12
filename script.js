@@ -11,16 +11,23 @@ const parent2 = document.querySelector('.parent-2');
 const parent3 = document.querySelector('.parent-3');
 const parent4 = document.querySelector('.parent-4');
 
+const about = document.querySelector('.about');
+const projects = document.querySelector('.projects');
+const experience = document.querySelector('.experience');
+const contact = document.querySelector('.contact');
+
+
+
 // CLICK ON GRANDPARENT
 
 grandparent.addEventListener('click', () => {
-
-
 
 })
 
 // CLICK ON PARENT ICON
 parent1.addEventListener('click', () => {
+
+    //trigger animation
     if (parentClicked === 0) {
     parentClicked = 1;
     console.log("click registered"+`${parentClicked}`);
@@ -51,9 +58,41 @@ parent1.addEventListener('click', () => {
         console.log("click registered"+`${parentClicked}`);
         parent1.classList.remove("parent-1Activated");
         parent1.classList.add("parent-1DisActivated");
+    };
+
+    if (parentClicked === 1) {
+        about.style.visibility = "visible";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "hidden";
+    }
+    else if (parentClicked === 2) {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "visible";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "hidden";
+    }
+    else if (parentClicked === 3) {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "visible";
+        contact.style.visibility = "hidden";
+    }
+    else if (parentClicked === 4) {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "visible";
+    }
+    else {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "hidden";
     }
 })
 
+// ADD & REMOVE CLASSES ON CLICK
 parent2.addEventListener('click', () => {
     if (parentClicked === 0) {
     parentClicked = 2;
@@ -85,6 +124,37 @@ parent2.addEventListener('click', () => {
         console.log("click registered"+`${parentClicked}`);
         parent2.classList.remove("parent-2Activated");
         parent2.classList.add("parent-2DisActivated");
+    };
+
+    if (parentClicked === 1) {
+        about.style.visibility = "visible";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "hidden";
+    }
+    else if (parentClicked === 2) {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "visible";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "hidden";
+    }
+    else if (parentClicked === 3) {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "visible";
+        contact.style.visibility = "hidden";
+    }
+    else if (parentClicked === 4) {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "visible";
+    }
+    else {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "hidden";
     }
 })
 
@@ -119,11 +189,42 @@ parent3.addEventListener('click', () => {
         console.log("click registered"+`${parentClicked}`);
         parent3.classList.remove("parent-3Activated");
         parent3.classList.add("parent-3DisActivated");
+    };
+
+    if (parentClicked === 1) {
+        about.style.visibility = "visible";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "hidden";
+    }
+    else if (parentClicked === 2) {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "visible";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "hidden";
+    }
+    else if (parentClicked === 3) {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "visible";
+        contact.style.visibility = "hidden";
+    }
+    else if (parentClicked === 4) {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "visible";
+    }
+    else {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "hidden";
     }
 })
 
 parent4.addEventListener('click', () => {
-    if (parentClicked !== 4) {
+    if (parentClicked === 0) {
     parentClicked = 4;
     console.log("click registered"+`${parentClicked}`);
     heading.innerHTML="It's working!";
@@ -153,5 +254,36 @@ parent4.addEventListener('click', () => {
         console.log("click registered"+`${parentClicked}`);
         parent4.classList.remove("parent-4Activated");
         parent4.classList.add("parent-4DisActivated"); 
+    };
+
+    if (parentClicked === 1) {
+        about.style.visibility = "visible";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "hidden";
+    }
+    else if (parentClicked === 2) {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "visible";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "hidden";
+    }
+    else if (parentClicked === 3) {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "visible";
+        contact.style.visibility = "hidden";
+    }
+    else if (parentClicked === 4) {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "visible";
+    }
+    else {
+        about.style.visibility = "hidden";
+        projects.style.visibility = "hidden";
+        experience.style.visibility = "hidden";
+        contact.style.visibility = "hidden";
     }
 })
