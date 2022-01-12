@@ -2,6 +2,9 @@
 let grandparentClicked = 0;
 let parentClicked = 0;
 
+let triggerQueue = false;
+let queue = 0;
+
 let clickable = true;
 
 let parent1forward = false;
@@ -55,16 +58,19 @@ parent1.addEventListener('click', () => {
             parent2.classList.remove("parent-2Activated");
             parent2.classList.add("parent-2DisActivated");
             parent2forward = false;
+            queue = 1;
         }
         else if (parent3forward === true) {
             parent3.classList.remove("parent-3Activated");
             parent3.classList.add("parent-3DisActivated");
             parent3forward = false;
+            queue = 1;
         }
         else if (parent4forward === true) {
             parent4.classList.remove("parent-4Activated");
             parent4.classList.add("parent-4DisActivated");
             parent4forward = false;
+            queue = 1;
         }
         else {  //everything is in base position - can begin animation
             
@@ -210,9 +216,10 @@ parent4.addEventListener('click', () => {
 
 //parent 1
 parent1.addEventListener('animationend', () => {
-    alert("Parent1 Animation has finished")
 
-    clickable = true;
+    if (queue === 0) {
+        clickable = true;
+    }
 
     //text dissapears on backward
     if (parent1forward === false) {
@@ -226,10 +233,7 @@ parent1.addEventListener('animationend', () => {
 
 //parent 2
 parent2.addEventListener('animationend', () => {
-    alert("Parent2 Animation has finished")
 
-    clickable = true;
-    
     if (parent2forward === false) {
 
         about.style.visibility = "hidden";
@@ -237,13 +241,52 @@ parent2.addEventListener('animationend', () => {
         experience.style.visibility = "hidden";
         contact.style.visibility = "hidden";
     }
+
+    if (queue === 0) {
+        clickable = true;
+    }
+    else { //check if something in queue
+        if (queue === 1) {
+            //make text visible
+            about.style.visibility = "visible";
+            //trigger animation
+            parent1.classList.add("parent-1Activated");
+            parent1.classList.remove("parent-1DisActivated");
+            parent1forward = true;
+        } else if (queue === 2) {
+            //make text visible
+            projects.style.visibility = "visible";
+            //trigger animation
+            parent2.classList.add("parent-2Activated");
+            parent2.classList.remove("parent-2DisActivated");
+            parent2forward = true;
+        } else if (queue === 3) {
+            //make text visible
+            experience.style.visibility = "visible";
+            //trigger animation
+            parent3.classList.add("parent-3Activated");
+            parent3.classList.remove("parent-3DisActivated");
+            parent3forward = true;
+        } else if (queue === 4) {
+            //make text visible
+            contact.style.visibility = "visible";
+            //trigger animation
+            parent4.classList.add("parent-4Activated");
+            parent4.classList.remove("parent-4DisActivated");
+            parent4forward = true;
+        }
+        //reset queue
+        queue = 0;
+        triggerQueue = false;
+    }
 })
 
 //parent 3
 parent3.addEventListener('animationend', () => {
-    alert("Parent3 Animation has finished")
 
-    clickable = true;
+    if (queue === 0) {
+        clickable = true;
+    }
     
     if (parent3forward === false) {
 
@@ -256,9 +299,10 @@ parent3.addEventListener('animationend', () => {
 
 //parent 4
 parent4.addEventListener('animationend', () => {
-    alert("Parent4 Animation has finished")
 
-    clickable = true;
+    if (queue === 0) {
+        clickable = true;
+    }
     
     if (parent4forward === false) {
 
@@ -268,3 +312,4 @@ parent4.addEventListener('animationend', () => {
         contact.style.visibility = "hidden";
     }
 })
+
