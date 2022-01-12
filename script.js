@@ -5,6 +5,7 @@ let parentClicked = 0;
 let clickable = true;
 
 let parent1forward = false;
+let parent2forward = false;
 
 const heading = document.querySelector("h1");
 
@@ -24,6 +25,8 @@ const contact = document.querySelector('.contact');
 
 
 // TRIGGERED ON ANIMATION END
+
+//parent 1
 parent1.addEventListener('animationend', () => {
     alert("Parent1 Animation has finished")
 
@@ -64,13 +67,56 @@ parent1.addEventListener('animationend', () => {
     }  
 })
 
+//parent 2
+parent2.addEventListener('animationend', () => {
+    alert("Parent2 Animation has finished")
+
+    clickable = true;
+
+    //text dissapears on backward
+    if (parent2forward === false) {
+        if (parentClicked === 1) {
+            about.style.visibility = "visible";
+            projects.style.visibility = "hidden";
+            experience.style.visibility = "hidden";
+            contact.style.visibility = "hidden";
+        }
+        else if (parentClicked === 2) {
+            about.style.visibility = "hidden";
+            projects.style.visibility = "visible";
+            experience.style.visibility = "hidden";
+            contact.style.visibility = "hidden";
+        }
+        else if (parentClicked === 3) {
+            about.style.visibility = "hidden";
+            projects.style.visibility = "hidden";
+            experience.style.visibility = "visible";
+            contact.style.visibility = "hidden";
+        }
+        else if (parentClicked === 4) {
+            about.style.visibility = "hidden";
+            projects.style.visibility = "hidden";
+            experience.style.visibility = "hidden";
+            contact.style.visibility = "visible";
+        }
+        else {
+            about.style.visibility = "hidden";
+            projects.style.visibility = "hidden";
+            experience.style.visibility = "hidden";
+            contact.style.visibility = "hidden";
+        }
+    }  
+})
+
 // CLICK ON GRANDPARENT
 
 grandparent.addEventListener('click', () => {
 
 })
 
-// CLICK ON PARENT ICON
+// CLICK ON PARENT ICON - ADD & REMOVE CLASSES
+
+//parent 1
 parent1.addEventListener('click', () => {
 
     if (clickable === true) {
@@ -147,71 +193,84 @@ parent1.addEventListener('click', () => {
     }
 })
 
-// ADD & REMOVE CLASSES ON CLICK
-parent2.addEventListener('click', () => {
-    if (parentClicked === 0) {
-    parentClicked = 2;
-    console.log("click registered"+`${parentClicked}`);
-    heading.innerHTML="It's working!";
-    parent2.classList.add("parent-2Activated");
-    parent2.classList.remove("parent-2DisActivated");
-    }
-    else if (parentClicked === 1) {
-        parent1.classList.add("parent-1DisActivated");
-        parentClicked = 2;
-        parent2.classList.add("parent-2Activated");
-        parent2.classList.remove("parent-2DisActivated");
-    }
-    else if (parentClicked === 3) {
-        parent3.classList.add("parent-3DisActivated");
-        parentClicked = 2;
-        parent2.classList.add("parent-2Activated");
-        parent2.classList.remove("parent-2DisActivated");
-    }
-    else if (parentClicked === 4) {
-        parent4.classList.add("parent-4DisActivated");
-        parentClicked = 2;
-        parent2.classList.add("parent-2Activated");
-        parent2.classList.remove("parent-2DisActivated");
-    }
-    else {
-        parentClicked = 0;
-        console.log("click registered"+`${parentClicked}`);
-        parent2.classList.remove("parent-2Activated");
-        parent2.classList.add("parent-2DisActivated");
-    };
 
-    if (parentClicked === 1) {
-        about.style.visibility = "visible";
-        projects.style.visibility = "hidden";
-        experience.style.visibility = "hidden";
-        contact.style.visibility = "hidden";
-    }
-    else if (parentClicked === 2) {
-        about.style.visibility = "hidden";
-        projects.style.visibility = "visible";
-        experience.style.visibility = "hidden";
-        contact.style.visibility = "hidden";
-    }
-    else if (parentClicked === 3) {
-        about.style.visibility = "hidden";
-        projects.style.visibility = "hidden";
-        experience.style.visibility = "visible";
-        contact.style.visibility = "hidden";
-    }
-    else if (parentClicked === 4) {
-        about.style.visibility = "hidden";
-        projects.style.visibility = "hidden";
-        experience.style.visibility = "hidden";
-        contact.style.visibility = "visible";
-    }
-    else {
-        about.style.visibility = "hidden";
-        projects.style.visibility = "hidden";
-        experience.style.visibility = "hidden";
-        contact.style.visibility = "hidden";
+//parent 2
+parent2.addEventListener('click', () => {
+
+    if (clickable === true) {
+
+        clickable = false; 
+
+        //trigger animation
+        if (parentClicked === 0) {
+        parentClicked = 2;
+        console.log("click registered"+`${parentClicked}`);
+        heading.innerHTML="It's working!";
+        parent2.classList.add("parent-2Activated");
+        parent2.classList.remove("parent-2DisActivated");
+        parent2forward = true;
+        }
+        else if (parentClicked === 1) {
+            parent1.classList.add("parent-1DisActivated");
+            parentClicked = 2;
+            parent2.classList.add("parent-2Activated");
+            parent2.classList.remove("parent-2DisActivated");
+        }
+        else if (parentClicked === 3) {
+            parent3.classList.add("parent-3DisActivated");
+            parentClicked = 2;
+            parent2.classList.add("parent-2Activated");
+            parent2.classList.remove("parent-2DisActivated");
+        }
+        else if (parentClicked === 4) {
+            parent4.classList.add("parent-4DisActivated");
+            parentClicked = 2;
+            parent2.classList.add("parent-2Activated");
+            parent2.classList.remove("parent-2DisActivated");
+        }
+        else {
+            parentClicked = 0;
+            console.log("click registered"+`${parentClicked}`);
+            parent2.classList.remove("parent-2Activated");
+            parent2.classList.add("parent-2DisActivated");
+            parent2forward = false;
+        };
+
+        if (parent2forward === true) {
+            if (parentClicked === 1) {
+                about.style.visibility = "visible";
+                projects.style.visibility = "hidden";
+                experience.style.visibility = "hidden";
+                contact.style.visibility = "hidden";
+            }
+            else if (parentClicked === 2) {
+                about.style.visibility = "hidden";
+                projects.style.visibility = "visible";
+                experience.style.visibility = "hidden";
+                contact.style.visibility = "hidden";
+            }
+            else if (parentClicked === 3) {
+                about.style.visibility = "hidden";
+                projects.style.visibility = "hidden";
+                experience.style.visibility = "visible";
+                contact.style.visibility = "hidden";
+            }
+            else if (parentClicked === 4) {
+                about.style.visibility = "hidden";
+                projects.style.visibility = "hidden";
+                experience.style.visibility = "hidden";
+                contact.style.visibility = "visible";
+            }
+            else {
+                about.style.visibility = "hidden";
+                projects.style.visibility = "hidden";
+                experience.style.visibility = "hidden";
+                contact.style.visibility = "hidden";
+            }
+        }
     }
 })
+
 
 parent3.addEventListener('click', () => {
     if (parentClicked === 0) {
