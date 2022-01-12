@@ -6,6 +6,8 @@ let clickable = true;
 
 let parent1forward = false;
 let parent2forward = false;
+let parent3forward = false;
+let parent4forward = false;
 
 const heading = document.querySelector("h1");
 
@@ -21,92 +23,12 @@ const projects = document.querySelector('.projects');
 const experience = document.querySelector('.experience');
 const contact = document.querySelector('.contact');
 
+about.style.visibility = "hidden";
+projects.style.visibility = "hidden";
+experience.style.visibility = "hidden";
+contact.style.visibility = "hidden";
 
 
-
-// TRIGGERED ON ANIMATION END
-
-//parent 1
-parent1.addEventListener('animationend', () => {
-    alert("Parent1 Animation has finished")
-
-    clickable = true;
-
-    //text dissapears on backward
-    if (parent1forward === false) {
-        if (parentClicked === 1) {
-            about.style.visibility = "visible";
-            projects.style.visibility = "hidden";
-            experience.style.visibility = "hidden";
-            contact.style.visibility = "hidden";
-        }
-        else if (parentClicked === 2) {
-            about.style.visibility = "hidden";
-            projects.style.visibility = "visible";
-            experience.style.visibility = "hidden";
-            contact.style.visibility = "hidden";
-        }
-        else if (parentClicked === 3) {
-            about.style.visibility = "hidden";
-            projects.style.visibility = "hidden";
-            experience.style.visibility = "visible";
-            contact.style.visibility = "hidden";
-        }
-        else if (parentClicked === 4) {
-            about.style.visibility = "hidden";
-            projects.style.visibility = "hidden";
-            experience.style.visibility = "hidden";
-            contact.style.visibility = "visible";
-        }
-        else {
-            about.style.visibility = "hidden";
-            projects.style.visibility = "hidden";
-            experience.style.visibility = "hidden";
-            contact.style.visibility = "hidden";
-        }
-    }  
-})
-
-//parent 2
-parent2.addEventListener('animationend', () => {
-    alert("Parent2 Animation has finished")
-
-    clickable = true;
-
-    //text dissapears on backward
-    if (parent2forward === false) {
-        if (parentClicked === 1) {
-            about.style.visibility = "visible";
-            projects.style.visibility = "hidden";
-            experience.style.visibility = "hidden";
-            contact.style.visibility = "hidden";
-        }
-        else if (parentClicked === 2) {
-            about.style.visibility = "hidden";
-            projects.style.visibility = "visible";
-            experience.style.visibility = "hidden";
-            contact.style.visibility = "hidden";
-        }
-        else if (parentClicked === 3) {
-            about.style.visibility = "hidden";
-            projects.style.visibility = "hidden";
-            experience.style.visibility = "visible";
-            contact.style.visibility = "hidden";
-        }
-        else if (parentClicked === 4) {
-            about.style.visibility = "hidden";
-            projects.style.visibility = "hidden";
-            experience.style.visibility = "hidden";
-            contact.style.visibility = "visible";
-        }
-        else {
-            about.style.visibility = "hidden";
-            projects.style.visibility = "hidden";
-            experience.style.visibility = "hidden";
-            contact.style.visibility = "hidden";
-        }
-    }  
-})
 
 // CLICK ON GRANDPARENT
 
@@ -123,213 +45,193 @@ parent1.addEventListener('click', () => {
 
         clickable = false; 
 
-        //trigger animation
-        if (parentClicked === 0) {
-        parentClicked = 1;
-        console.log("click registered"+`${parentClicked}`);
-        heading.innerHTML="It's working!";
-        parent1.classList.add("parent-1Activated");
-        parent1.classList.remove("parent-1DisActivated");
-        parent1forward = true;
-        }
-        else if (parentClicked === 2) {
-            parent2.classList.add("parent-2DisActivated");
-            parentClicked = 1;
-            parent1.classList.add("parent-1Activated");
-            parent1.classList.remove("parent-1DisActivated");
-        }
-        else if (parentClicked === 3) {
-            parent3.classList.add("parent-3DisActivated");
-            parentClicked = 1;
-            parent1.classList.add("parent-1Activated");
-            parent1.classList.remove("parent-1DisActivated");
-        }
-        else if (parentClicked === 4) {
-            parent4.classList.add("parent-4DisActivated");
-            parentClicked = 1;
-            parent1.classList.add("parent-1Activated");
-            parent1.classList.remove("parent-1DisActivated");
-        }
-        else {
-            parentClicked = 0;
-            console.log("click registered"+`${parentClicked}`);
+        //trigger reverse animation if something already active
+        if (parent1forward === true) {  
             parent1.classList.remove("parent-1Activated");
             parent1.classList.add("parent-1DisActivated");
             parent1forward = false;
-        };
-
-        if (parent1forward === true) {
-            if (parentClicked === 1) {
-                about.style.visibility = "visible";
-                projects.style.visibility = "hidden";
-                experience.style.visibility = "hidden";
-                contact.style.visibility = "hidden";
-            }
-            else if (parentClicked === 2) {
-                about.style.visibility = "hidden";
-                projects.style.visibility = "visible";
-                experience.style.visibility = "hidden";
-                contact.style.visibility = "hidden";
-            }
-            else if (parentClicked === 3) {
-                about.style.visibility = "hidden";
-                projects.style.visibility = "hidden";
-                experience.style.visibility = "visible";
-                contact.style.visibility = "hidden";
-            }
-            else if (parentClicked === 4) {
-                about.style.visibility = "hidden";
-                projects.style.visibility = "hidden";
-                experience.style.visibility = "hidden";
-                contact.style.visibility = "visible";
-            }
-            else {
-                about.style.visibility = "hidden";
-                projects.style.visibility = "hidden";
-                experience.style.visibility = "hidden";
-                contact.style.visibility = "hidden";
-            }
         }
+        else if (parent2forward === true) {
+            parent2.classList.remove("parent-2Activated");
+            parent2.classList.add("parent-2DisActivated");
+            parent2forward = false;
+        }
+        else if (parent3forward === true) {
+            parent3.classList.remove("parent-3Activated");
+            parent3.classList.add("parent-3DisActivated");
+            parent3forward = false;
+        }
+        else if (parent4forward === true) {
+            parent4.classList.remove("parent-4Activated");
+            parent4.classList.add("parent-4DisActivated");
+            parent4forward = false;
+        }
+        else {  //everything is in base position - can begin animation
+            
+            //make text visible
+            about.style.visibility = "visible";
+            //trigger animation
+            parent1.classList.add("parent-1Activated");
+            parent1.classList.remove("parent-1DisActivated");
+            parent1forward = true;
+        }       
     }
 })
 
-
-//parent 2
+//parent2
 parent2.addEventListener('click', () => {
 
     if (clickable === true) {
 
         clickable = false; 
 
-        //trigger animation
-        if (parentClicked === 0) {
-        parentClicked = 2;
-        console.log("click registered"+`${parentClicked}`);
-        heading.innerHTML="It's working!";
-        parent2.classList.add("parent-2Activated");
-        parent2.classList.remove("parent-2DisActivated");
-        parent2forward = true;
-        }
-        else if (parentClicked === 1) {
+        //trigger reverse animation if something already active
+        if (parent1forward === true) {  
+            parent1.classList.remove("parent-1Activated");
             parent1.classList.add("parent-1DisActivated");
-            parentClicked = 2;
-            parent2.classList.add("parent-2Activated");
-            parent2.classList.remove("parent-2DisActivated");
+            parent1forward = false;
         }
-        else if (parentClicked === 3) {
-            parent3.classList.add("parent-3DisActivated");
-            parentClicked = 2;
-            parent2.classList.add("parent-2Activated");
-            parent2.classList.remove("parent-2DisActivated");
-        }
-        else if (parentClicked === 4) {
-            parent4.classList.add("parent-4DisActivated");
-            parentClicked = 2;
-            parent2.classList.add("parent-2Activated");
-            parent2.classList.remove("parent-2DisActivated");
-        }
-        else {
-            parentClicked = 0;
-            console.log("click registered"+`${parentClicked}`);
+        else if (parent2forward === true) {
             parent2.classList.remove("parent-2Activated");
             parent2.classList.add("parent-2DisActivated");
             parent2forward = false;
-        };
-
-        if (parent2forward === true) {
-            if (parentClicked === 1) {
-                about.style.visibility = "visible";
-                projects.style.visibility = "hidden";
-                experience.style.visibility = "hidden";
-                contact.style.visibility = "hidden";
-            }
-            else if (parentClicked === 2) {
-                about.style.visibility = "hidden";
-                projects.style.visibility = "visible";
-                experience.style.visibility = "hidden";
-                contact.style.visibility = "hidden";
-            }
-            else if (parentClicked === 3) {
-                about.style.visibility = "hidden";
-                projects.style.visibility = "hidden";
-                experience.style.visibility = "visible";
-                contact.style.visibility = "hidden";
-            }
-            else if (parentClicked === 4) {
-                about.style.visibility = "hidden";
-                projects.style.visibility = "hidden";
-                experience.style.visibility = "hidden";
-                contact.style.visibility = "visible";
-            }
-            else {
-                about.style.visibility = "hidden";
-                projects.style.visibility = "hidden";
-                experience.style.visibility = "hidden";
-                contact.style.visibility = "hidden";
-            }
         }
+        else if (parent3forward === true) {
+            parent3.classList.remove("parent-3Activated");
+            parent3.classList.add("parent-3DisActivated");
+            parent3forward = false;
+        }
+        else if (parent4forward === true) {
+            parent4.classList.remove("parent-4Activated");
+            parent4.classList.add("parent-4DisActivated");
+            parent4forward = false;
+        }
+        else {  //everything is in base position - can begin animation
+            
+            //make text visible
+            projects.style.visibility = "visible";
+            //trigger animation
+            parent2.classList.add("parent-2Activated");
+            parent2.classList.remove("parent-2DisActivated");
+            parent2forward = true;
+        }       
     }
 })
 
-
+//parent3
 parent3.addEventListener('click', () => {
-    if (parentClicked === 0) {
-    parentClicked = 3;
-    console.log("click registered"+`${parentClicked}`);
-    heading.innerHTML="It's working!";
-    parent3.classList.add("parent-3Activated");
-    parent3.classList.remove("parent-3DisActivated");
-    }
-    else if (parentClicked === 1) {
-        parent1.classList.add("parent-1DisActivated");
-        parentClicked = 3;
-        parent3.classList.add("parent-3Activated");
-        parent3.classList.remove("parent-3DisActivated");
-    }
-    else if (parentClicked === 2) {
-        parent2.classList.add("parent-2DisActivated");
-        parentClicked = 3;
-        parent3.classList.add("parent-3Activated");
-        parent3.classList.remove("parent-3DisActivated");
-    }
-    else if (parentClicked === 4) {
-        parent4.classList.add("parent-4DisActivated");
-        parentClicked = 3;
-        parent3.classList.add("parent-3Activated");
-        parent3.classList.remove("parent-3DisActivated");
-    }
-    else {
-        parentClicked = 0;
-        console.log("click registered"+`${parentClicked}`);
-        parent3.classList.remove("parent-3Activated");
-        parent3.classList.add("parent-3DisActivated");
-    };
 
-    if (parentClicked === 1) {
-        about.style.visibility = "visible";
+    if (clickable === true) {
+
+        clickable = false; 
+
+        //trigger reverse animation if something already active
+        if (parent1forward === true) {  
+            parent1.classList.remove("parent-1Activated");
+            parent1.classList.add("parent-1DisActivated");
+            parent1forward = false;
+        }
+        else if (parent2forward === true) {
+            parent2.classList.remove("parent-2Activated");
+            parent2.classList.add("parent-2DisActivated");
+            parent2forward = false;
+        }
+        else if (parent3forward === true) {
+            parent3.classList.remove("parent-3Activated");
+            parent3.classList.add("parent-3DisActivated");
+            parent3forward = false;
+        }
+        else if (parent4forward === true) {
+            parent4.classList.remove("parent-4Activated");
+            parent4.classList.add("parent-4DisActivated");
+            parent4forward = false;
+        }
+        else {  //everything is in base position - can begin animation
+            
+            //make text visible
+            experience.style.visibility = "visible";
+            //trigger animation
+            parent3.classList.add("parent-3Activated");
+            parent3.classList.remove("parent-3DisActivated");
+            parent3forward = true;
+        }       
+    }
+})
+
+//parent4
+parent4.addEventListener('click', () => {
+
+    if (clickable === true) {
+
+        clickable = false; 
+
+        //trigger reverse animation if something already active
+        if (parent1forward === true) {  
+            parent1.classList.remove("parent-1Activated");
+            parent1.classList.add("parent-1DisActivated");
+            parent1forward = false;
+        }
+        else if (parent2forward === true) {
+            parent2.classList.remove("parent-2Activated");
+            parent2.classList.add("parent-2DisActivated");
+            parent2forward = false;
+        }
+        else if (parent3forward === true) {
+            parent3.classList.remove("parent-3Activated");
+            parent3.classList.add("parent-3DisActivated");
+            parent3forward = false;
+        }
+        else if (parent4forward === true) {
+            parent4.classList.remove("parent-4Activated");
+            parent4.classList.add("parent-4DisActivated");
+            parent4forward = false;
+        }
+        else {  //everything is in base position - can begin animation
+            
+            //make text visible
+            contact.style.visibility = "visible";
+            //trigger animation
+            parent4.classList.add("parent-4Activated");
+            parent4.classList.remove("parent-4DisActivated");
+            parent4forward = true;
+        }       
+    }
+})
+
+
+
+
+
+
+
+
+
+// TRIGGERED ON ANIMATION END
+
+//parent 1
+parent1.addEventListener('animationend', () => {
+    alert("Parent1 Animation has finished")
+
+    clickable = true;
+
+    //text dissapears on backward
+    if (parent1forward === false) {
+
+        about.style.visibility = "hidden";
         projects.style.visibility = "hidden";
         experience.style.visibility = "hidden";
         contact.style.visibility = "hidden";
-    }
-    else if (parentClicked === 2) {
-        about.style.visibility = "hidden";
-        projects.style.visibility = "visible";
-        experience.style.visibility = "hidden";
-        contact.style.visibility = "hidden";
-    }
-    else if (parentClicked === 3) {
-        about.style.visibility = "hidden";
-        projects.style.visibility = "hidden";
-        experience.style.visibility = "visible";
-        contact.style.visibility = "hidden";
-    }
-    else if (parentClicked === 4) {
-        about.style.visibility = "hidden";
-        projects.style.visibility = "hidden";
-        experience.style.visibility = "hidden";
-        contact.style.visibility = "visible";
-    }
-    else {
+    }  
+})
+
+//parent 2
+parent2.addEventListener('animationend', () => {
+    alert("Parent2 Animation has finished")
+
+    clickable = true;
+    
+    if (parent2forward === false) {
+
         about.style.visibility = "hidden";
         projects.style.visibility = "hidden";
         experience.style.visibility = "hidden";
@@ -337,64 +239,29 @@ parent3.addEventListener('click', () => {
     }
 })
 
-parent4.addEventListener('click', () => {
-    if (parentClicked === 0) {
-    parentClicked = 4;
-    console.log("click registered"+`${parentClicked}`);
-    heading.innerHTML="It's working!";
-    parent4.classList.add("parent-4Activated");
-    parent4.classList.remove("parent-4DisActivated");
-    }
-    else if (parentClicked === 1) {
-        parent1.classList.add("parent-1DisActivated");
-        parentClicked = 4;
-        parent4.classList.add("parent-4Activated");
-        parent4.classList.remove("parent-4DisActivated");
-    }
-    else if (parentClicked === 2) {
-        parent2.classList.add("parent-2DisActivated");
-        parentClicked = 4;
-        parent4.classList.add("parent-4Activated");
-        parent4.classList.remove("parent-4DisActivated");
-    }
-    else if (parentClicked === 3) {
-        parent3.classList.add("parent-3DisActivated");
-        parentClicked = 4;
-        parent4.classList.add("parent-4Activated");
-        parent4.classList.remove("parent-4DisActivated");
-    }
-    else {
-        parentClicked = 0;
-        console.log("click registered"+`${parentClicked}`);
-        parent4.classList.remove("parent-4Activated");
-        parent4.classList.add("parent-4DisActivated"); 
-    };
+//parent 3
+parent3.addEventListener('animationend', () => {
+    alert("Parent3 Animation has finished")
 
-    if (parentClicked === 1) {
-        about.style.visibility = "visible";
+    clickable = true;
+    
+    if (parent3forward === false) {
+
+        about.style.visibility = "hidden";
         projects.style.visibility = "hidden";
         experience.style.visibility = "hidden";
         contact.style.visibility = "hidden";
     }
-    else if (parentClicked === 2) {
-        about.style.visibility = "hidden";
-        projects.style.visibility = "visible";
-        experience.style.visibility = "hidden";
-        contact.style.visibility = "hidden";
-    }
-    else if (parentClicked === 3) {
-        about.style.visibility = "hidden";
-        projects.style.visibility = "hidden";
-        experience.style.visibility = "visible";
-        contact.style.visibility = "hidden";
-    }
-    else if (parentClicked === 4) {
-        about.style.visibility = "hidden";
-        projects.style.visibility = "hidden";
-        experience.style.visibility = "hidden";
-        contact.style.visibility = "visible";
-    }
-    else {
+})
+
+//parent 4
+parent4.addEventListener('animationend', () => {
+    alert("Parent4 Animation has finished")
+
+    clickable = true;
+    
+    if (parent4forward === false) {
+
         about.style.visibility = "hidden";
         projects.style.visibility = "hidden";
         experience.style.visibility = "hidden";
