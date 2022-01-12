@@ -8,7 +8,7 @@
 .textSection {
     font-size: larger;
     position: relative;
-    color: black;
+    color: white;
 }
 
 /* .textSection__content {
@@ -111,7 +111,7 @@
     }
     100% {
      transform: translateY(200%);
-     width: 400%;    
+     width: 400%;   
     }
 }
 
