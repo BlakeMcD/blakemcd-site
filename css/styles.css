@@ -10,8 +10,16 @@
 /* WHOLE DOC */
 * {
     margin: 0px;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Courier Prime', monospace;
     /* background-color: grey; */
+}
+
+/* INTRODUCTION */
+.introduction {
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
 }
 
 /* TEXT SECTION */
