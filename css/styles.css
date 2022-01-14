@@ -1,6 +1,9 @@
 /* VARIABLES */
 :root {
-    --header_element_height: 400px;
+    --header_element_height: 200px;
+    --header_element_width: 20%;
+    --header_border_radius: 20px;
+    --header_element_expanded_width: 500%;
 }
 
 /* WHOLE DOC */
@@ -47,9 +50,10 @@
 .parent-1 {
     background-color: darkred;
     height:100%;
-    width: 25%;
+    width: var(--header_element_width);
     position: absolute;
     left: 0%;
+    border-radius: var(--header_border_radius);
 }
 
 .parent-1__child {
@@ -58,14 +62,16 @@
     width: 100%;
     position: absolute;
     left: 0%;
+    border-radius: var(--header_border_radius);
 }
 
 .parent-2 {
     background-color: gold;
     height:100%;
-    width: 25%;
+    width: var(--header_element_width);
     position: absolute;
     left: 25%;
+    border-radius: var(--header_border_radius);
 }
 
 .parent-2__child {
@@ -73,14 +79,16 @@
     height:100%;
     width: 100%;
     position: absolute;
+    border-radius: var(--header_border_radius);
 }
 
 .parent-3 {
     background-color: darkgreen;
     height:100%;
-    width: 25%;
+    width: var(--header_element_width);
     position: absolute;
     left: 50%;
+    border-radius: var(--header_border_radius);
 }
 
 .parent-3__child {
@@ -88,14 +96,16 @@
     height:100%;
     width: 100%;
     position: absolute;
+    border-radius: var(--header_border_radius);
 }
 
 .parent-4 {
     background-color: darkblue;
     height:100%;
-    width: 25%;
+    width: var(--header_element_width);
     position: absolute;
     left: 75%;
+    border-radius: var(--header_border_radius);
 }
 
 .parent-4__child {
@@ -103,6 +113,7 @@
     height:100%;
     width: 100%;
     position: absolute;
+    border-radius: var(--header_border_radius);
 }
 
 /* ACTIVATED  */
@@ -118,7 +129,7 @@
     }
     100% {
      transform: translateY(var(--header_element_height));
-     width: 400%;   
+     width: var(--header_element_expanded_width);   
      height: 400%;
     }
 }
@@ -134,9 +145,9 @@
        left: 0%;
    }
    100% {
-    left: -100%;
+    left: -100%;;
     transform: translateY(var(--header_element_height));
-    width: 400%;  
+    width: var(--header_element_expanded_width);  
    }
 }
 
@@ -153,7 +164,7 @@
    100% {
     left: -200%;
     transform: translateY(var(--header_element_height));
-    width: 400%;
+    width: var(--header_element_expanded_width);
    }
 }
 
@@ -170,7 +181,7 @@
    100% {
     left: -300%;
     transform: translateY(var(--header_element_height));
-    width: 400%;
+    width: var(--header_element_expanded_width);
    }
 }
 
