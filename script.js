@@ -107,7 +107,6 @@ parent1.addEventListener('click', () => {
 
             //change height of box
             root.style.setProperty('--header_element_expanded_height1', `${totalHeight1}px`);
-            console.log(textHeight);
         }       
     }
 })
@@ -154,7 +153,6 @@ parent2.addEventListener('click', () => {
 
             //change height of box
             root.style.setProperty('--header_element_expanded_height2', `${totalHeight2}px`);
-            console.log(textHeight);
         }       
     }
 })
@@ -201,7 +199,6 @@ parent3.addEventListener('click', () => {
 
             //change height of box
             root.style.setProperty('--header_element_expanded_height3', `${totalHeight3}px`);
-            console.log(textHeight);
         }       
     }
 })
@@ -248,16 +245,9 @@ parent4.addEventListener('click', () => {
 
             //change height of box
             root.style.setProperty('--header_element_expanded_height4', `${totalHeight4}px`);
-            console.log(textHeight);
         }       
     }
 })
-
-
-
-
-
-
 
 
 
@@ -286,6 +276,8 @@ parent1.addEventListener('animationend', () => {
             parent1.classList.add("parent-1Activated");
             parent1.classList.remove("parent-1DisActivated");
             parent1forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height1', `${totalHeight1}px`);
         } else if (queue === 2) {
             //make text visible
             projects.style.visibility = "visible";
@@ -293,6 +285,8 @@ parent1.addEventListener('animationend', () => {
             parent2.classList.add("parent-2Activated");
             parent2.classList.remove("parent-2DisActivated");
             parent2forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height2', `${totalHeight2}px`);
         } else if (queue === 3) {
             //make text visible
             experience.style.visibility = "visible";
@@ -300,6 +294,8 @@ parent1.addEventListener('animationend', () => {
             parent3.classList.add("parent-3Activated");
             parent3.classList.remove("parent-3DisActivated");
             parent3forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height3', `${totalHeight3}px`);
         } else if (queue === 4) {
             //make text visible
             contact.style.visibility = "visible";
@@ -307,6 +303,8 @@ parent1.addEventListener('animationend', () => {
             parent4.classList.add("parent-4Activated");
             parent4.classList.remove("parent-4DisActivated");
             parent4forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height4', `${totalHeight4}px`);
         }
         //reset queue
         queue = 0;
@@ -337,6 +335,8 @@ parent2.addEventListener('animationend', () => {
             parent1.classList.add("parent-1Activated");
             parent1.classList.remove("parent-1DisActivated");
             parent1forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height1', `${totalHeight1}px`);
         } else if (queue === 2) {
             //make text visible
             projects.style.visibility = "visible";
@@ -344,6 +344,8 @@ parent2.addEventListener('animationend', () => {
             parent2.classList.add("parent-2Activated");
             parent2.classList.remove("parent-2DisActivated");
             parent2forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height2', `${totalHeight2}px`);
         } else if (queue === 3) {
             //make text visible
             experience.style.visibility = "visible";
@@ -351,6 +353,8 @@ parent2.addEventListener('animationend', () => {
             parent3.classList.add("parent-3Activated");
             parent3.classList.remove("parent-3DisActivated");
             parent3forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height3', `${totalHeight3}px`);
         } else if (queue === 4) {
             //make text visible
             contact.style.visibility = "visible";
@@ -358,6 +362,8 @@ parent2.addEventListener('animationend', () => {
             parent4.classList.add("parent-4Activated");
             parent4.classList.remove("parent-4DisActivated");
             parent4forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height4', `${totalHeight4}px`);
         }
         //reset queue
         queue = 0;
@@ -388,6 +394,8 @@ parent3.addEventListener('animationend', () => {
             parent1.classList.add("parent-1Activated");
             parent1.classList.remove("parent-1DisActivated");
             parent1forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height1', `${totalHeight1}px`);
         } else if (queue === 2) {
             //make text visible
             projects.style.visibility = "visible";
@@ -395,6 +403,8 @@ parent3.addEventListener('animationend', () => {
             parent2.classList.add("parent-2Activated");
             parent2.classList.remove("parent-2DisActivated");
             parent2forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height2', `${totalHeight2}px`);
         } else if (queue === 3) {
             //make text visible
             experience.style.visibility = "visible";
@@ -402,6 +412,8 @@ parent3.addEventListener('animationend', () => {
             parent3.classList.add("parent-3Activated");
             parent3.classList.remove("parent-3DisActivated");
             parent3forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height3', `${totalHeight3}px`);
         } else if (queue === 4) {
             //make text visible
             contact.style.visibility = "visible";
@@ -409,6 +421,8 @@ parent3.addEventListener('animationend', () => {
             parent4.classList.add("parent-4Activated");
             parent4.classList.remove("parent-4DisActivated");
             parent4forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height4', `${totalHeight4}px`);
         }
         //reset queue
         queue = 0;
@@ -439,6 +453,8 @@ parent4.addEventListener('animationend', () => {
             parent1.classList.add("parent-1Activated");
             parent1.classList.remove("parent-1DisActivated");
             parent1forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height1', `${totalHeight1}px`);
         } else if (queue === 2) {
             //make text visible
             projects.style.visibility = "visible";
@@ -446,6 +462,8 @@ parent4.addEventListener('animationend', () => {
             parent2.classList.add("parent-2Activated");
             parent2.classList.remove("parent-2DisActivated");
             parent2forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height2', `${totalHeight2}px`);
         } else if (queue === 3) {
             //make text visible
             experience.style.visibility = "visible";
@@ -453,6 +471,8 @@ parent4.addEventListener('animationend', () => {
             parent3.classList.add("parent-3Activated");
             parent3.classList.remove("parent-3DisActivated");
             parent3forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height3', `${totalHeight3}px`);
         } else if (queue === 4) {
             //make text visible
             contact.style.visibility = "visible";
@@ -460,6 +480,8 @@ parent4.addEventListener('animationend', () => {
             parent4.classList.add("parent-4Activated");
             parent4.classList.remove("parent-4DisActivated");
             parent4forward = true;
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height4', `${totalHeight4}px`);
         }
         //reset queue
         queue = 0;
