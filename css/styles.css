@@ -55,7 +55,7 @@
     flex: var(--text_flex_ratio);
     /* background-color: rgba(255, 0, 0, 0.2); */
     position: relative;
-    color: white;
+    color: black;
 }
 
 .catHeading {
@@ -92,7 +92,7 @@
 
 .grandparent {
     flex: var(--button_flex_ratio);
-    background-color: hsla(200, 100%, 20%);
+    /* background-color: hsla(200, 100%, 20%); */
     height: var(--header_element_height);
     position: relative;
     /* margin: 5% 10% 5% 10%; */
@@ -132,6 +132,7 @@
     /* left: 0%; */
     text-align: center;
     border-radius: var(--header_border_radius);
+    cursor: pointer;
 }
 
 .parent-2 {
@@ -142,6 +143,7 @@
     left:0%;
     top: calc(100% + var(--offset_percentage));
     border-radius: var(--header_border_radius);
+    cursor: pointer;
 }
 
 .parent-3 {
@@ -152,6 +154,7 @@
     left:0%;
     top: calc(200% + calc(2 * var(--offset_percentage)));
     border-radius: var(--header_border_radius);
+    cursor: pointer;
 }
 
 .parent-4 {
@@ -162,6 +165,7 @@
     left: 0%;
     top: calc(300% + calc(3 * var(--offset_percentage)));
     border-radius: var(--header_border_radius);
+    cursor: pointer;
 }
 
 /* parent-child */
