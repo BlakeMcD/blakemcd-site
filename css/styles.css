@@ -184,19 +184,40 @@
 }
 
 @keyframes up-to-down-then-expand-parent-2__child {
+    0% {
+        left: 0%;
+    }
    50% {
-       transform: translateY(calc(var(--header_element_height)*var(--header_yoffset_factor)));
-       width: 100%;
-       left: 0%;
+       left: calc(100% + var(--offset_percentage));
+       width: 100%; 
        height: 100%;
+       top: 0%;
    }
    100% {
-    left: -118%;
-    transform: translateY(calc(var(--header_element_height)*var(--header_yoffset_factor)));
-    width: var(--header_element_expanded_width);  
-    height: 300%;
+   left: calc(100% + var(--offset_percentage));
+   top: calc(-100% - var(--offset_percentage));
+    width: calc(100% * var(--text_flex_ratio) - var(--offset_percentage));   
+    height: 200%;
    }
 }
+
+/* .parent-2Activated .parent-2__child {
+    animation: up-to-down-then-expand-parent-2__child 1s ease-in-out forwards;
+}
+
+@keyframes up-to-down-then-expand-parent-2__child {
+    50% {
+        left: calc(100% + var(--offset_percentage));
+        width: 100%; 
+        height: 100%;
+    }
+    100% {
+        left: calc(100% + var(--offset_percentage));
+        top: calc(-100% - var(--offset_percentage));
+        width: calc(100% * var(--text_flex_ratio) - var(--offset_percentage));   
+        height: 200%;
+    }
+} */
 
 .parent-3Activated .parent-3__child {
     animation: up-to-down-then-expand-parent-3__child 1s ease-in-out forwards;
@@ -259,19 +280,22 @@
 }
 
 @keyframes up-to-down-then-expand-reverse-parent-2__child {
+    0% {
+        left: 0%;
+    }
    50% {
-       transform: translateY(calc(var(--header_element_height)*var(--header_yoffset_factor)));
-       width: 100%;
-       left: 0%;
+       left: calc(100% + var(--offset_percentage));
+       width: 100%; 
        height: 100%;
+       top: 0%;
    }
    100% {
-       left: -100%;
-    transform: translateY(calc(var(--header_element_height)*var(--header_yoffset_factor)));
-    width: 400%;
-    height: 300%;
-   }
-} 
+   left: calc(100% + var(--offset_percentage));
+   top: calc(-100% - var(--offset_percentage));
+    width: calc(100% * var(--text_flex_ratio) - var(--offset_percentage));   
+    height: 200%;
+   } 
+}
 
 .parent-3DisActivated .parent-3__child {
     animation: up-to-down-then-expand-reverse-parent-3__child 1s ease-in-out reverse;
