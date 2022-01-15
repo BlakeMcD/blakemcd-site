@@ -7,6 +7,8 @@ let queue = 0;
 
 let clickable = true;
 
+let textOffset = 25;
+
 let parent1forward = false;
 let parent2forward = false;
 let parent3forward = false;
@@ -26,10 +28,32 @@ const projects = document.querySelector('.projects');
 const experience = document.querySelector('.experience');
 const contact = document.querySelector('.contact');
 
+const root = document.querySelector(':root');
+
 about.style.visibility = "hidden";
 projects.style.visibility = "hidden";
 experience.style.visibility = "hidden";
 contact.style.visibility = "hidden";
+
+//height of box
+let titleElement = document.querySelector(".catHeading");
+let titleHeight = titleElement.clientHeight;
+
+let textElement1 = document.querySelector(".catBody1");
+let textHeight1 = textElement1.clientHeight;
+let totalHeight1 = titleHeight + textHeight1 + textOffset;
+
+let textElement2 = document.querySelector(".catBody2");
+let textHeight2 = textElement2.clientHeight;
+let totalHeight2 = titleHeight + textHeight2 + textOffset;
+
+let textElement3 = document.querySelector(".catBody3");
+let textHeight3 = textElement3.clientHeight;
+let totalHeight3 = titleHeight + textHeight3 + textOffset;
+
+let textElement4 = document.querySelector(".catBody4");
+let textHeight4 = textElement4.clientHeight;
+let totalHeight4 = titleHeight + textHeight4 + textOffset;
 
 
 
@@ -80,6 +104,10 @@ parent1.addEventListener('click', () => {
             parent1.classList.add("parent-1Activated");
             parent1.classList.remove("parent-1DisActivated");
             parent1forward = true;
+
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height1', `${totalHeight1}px`);
+            console.log(textHeight);
         }       
     }
 })
@@ -123,6 +151,10 @@ parent2.addEventListener('click', () => {
             parent2.classList.add("parent-2Activated");
             parent2.classList.remove("parent-2DisActivated");
             parent2forward = true;
+
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height2', `${totalHeight2}px`);
+            console.log(textHeight);
         }       
     }
 })
@@ -166,6 +198,10 @@ parent3.addEventListener('click', () => {
             parent3.classList.add("parent-3Activated");
             parent3.classList.remove("parent-3DisActivated");
             parent3forward = true;
+
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height3', `${totalHeight3}px`);
+            console.log(textHeight);
         }       
     }
 })
@@ -209,6 +245,10 @@ parent4.addEventListener('click', () => {
             parent4.classList.add("parent-4Activated");
             parent4.classList.remove("parent-4DisActivated");
             parent4forward = true;
+
+            //change height of box
+            root.style.setProperty('--header_element_expanded_height4', `${totalHeight4}px`);
+            console.log(textHeight);
         }       
     }
 })
