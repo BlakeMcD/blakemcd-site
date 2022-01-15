@@ -14,6 +14,9 @@ let parent2forward = false;
 let parent3forward = false;
 let parent4forward = false;
 
+const labelAppear = 0.2;
+const labelDisappear = 5;
+
 const heading = document.querySelector("h1");
 
 const grandparent = document.querySelector('.grandparent')
@@ -29,6 +32,11 @@ const experience = document.querySelector('.experience');
 const contact = document.querySelector('.contact');
 
 const root = document.querySelector(':root');
+
+const label1 = parent1.querySelector('.parentLabelFront');
+const label2 = parent2.querySelector('.parentLabelFront');
+const label3 = parent3.querySelector('.parentLabelFront');
+const label4 = parent4.querySelector('.parentLabelFront');
 
 about.style.visibility = "hidden";
 projects.style.visibility = "hidden";
@@ -77,29 +85,51 @@ parent1.addEventListener('click', () => {
             parent1.classList.remove("parent-1Activated");
             parent1.classList.add("parent-1DisActivated");
             parent1forward = false;
+            console.log("queue:"+queue)
+            const label1 = parent1.querySelector('.parentLabelFront');
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label1.classList.remove("transition");
         }
         else if (parent2forward === true) {
             parent2.classList.remove("parent-2Activated");
             parent2.classList.add("parent-2DisActivated");
             parent2forward = false;
             queue = 1;
+            console.log("line 87 the value of queue is:"+queue)
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label2.classList.remove("transition");
         }
         else if (parent3forward === true) {
             parent3.classList.remove("parent-3Activated");
             parent3.classList.add("parent-3DisActivated");
             parent3forward = false;
             queue = 1;
+            console.log("queue:"+queue)
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label3.classList.remove("transition");
         }
         else if (parent4forward === true) {
             parent4.classList.remove("parent-4Activated");
             parent4.classList.add("parent-4DisActivated");
             parent4forward = false;
             queue = 1;
+            console.log("queue:"+queue)
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label4.classList.remove("transition");
         }
         else {  //everything is in base position - can begin animation
             
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label1.classList.add("transition");
+
             //make text visible
             about.style.visibility = "visible";
+            console.log("line 102:about.style.visibility");
             //trigger animation
             parent1.classList.add("parent-1Activated");
             parent1.classList.remove("parent-1DisActivated");
@@ -124,26 +154,42 @@ parent2.addEventListener('click', () => {
             parent1.classList.add("parent-1DisActivated");
             parent1forward = false;
             queue = 2;
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label1.classList.remove("transition");
         }
         else if (parent2forward === true) {
             parent2.classList.remove("parent-2Activated");
             parent2.classList.add("parent-2DisActivated");
             parent2forward = false;
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label2.classList.remove("transition");
         }
         else if (parent3forward === true) {
             parent3.classList.remove("parent-3Activated");
             parent3.classList.add("parent-3DisActivated");
             parent3forward = false;
             queue = 2;
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label3.classList.remove("transition");
         }
         else if (parent4forward === true) {
             parent4.classList.remove("parent-4Activated");
             parent4.classList.add("parent-4DisActivated");
             parent4forward = false;
             queue = 2;
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label4.classList.remove("transition");
         }
         else {  //everything is in base position - can begin animation
             
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label2.classList.add("transition");
+
             //make text visible
             projects.style.visibility = "visible";
             //trigger animation
@@ -170,26 +216,42 @@ parent3.addEventListener('click', () => {
             parent1.classList.add("parent-1DisActivated");
             parent1forward = false;
             queue = 3;
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label1.classList.remove("transition");
         }
         else if (parent2forward === true) {
             parent2.classList.remove("parent-2Activated");
             parent2.classList.add("parent-2DisActivated");
             parent2forward = false;
             queue = 3;
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label2.classList.remove("transition");
         }
         else if (parent3forward === true) {
             parent3.classList.remove("parent-3Activated");
             parent3.classList.add("parent-3DisActivated");
             parent3forward = false;
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label3.classList.remove("transition");
         }
         else if (parent4forward === true) {
             parent4.classList.remove("parent-4Activated");
             parent4.classList.add("parent-4DisActivated");
             parent4forward = false;
             queue = 3;
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label4.classList.remove("transition");
         }
         else {  //everything is in base position - can begin animation
             
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label3.classList.add("transition");
+
             //make text visible
             experience.style.visibility = "visible";
             //trigger animation
@@ -216,26 +278,42 @@ parent4.addEventListener('click', () => {
             parent1.classList.add("parent-1DisActivated");
             parent1forward = false;
             queue = 4;
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label1.classList.remove("transition");
         }
         else if (parent2forward === true) {
             parent2.classList.remove("parent-2Activated");
             parent2.classList.add("parent-2DisActivated");
             parent2forward = false;
             queue = 4;
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label2.classList.remove("transition");
         }
         else if (parent3forward === true) {
             parent3.classList.remove("parent-3Activated");
             parent3.classList.add("parent-3DisActivated");
             parent3forward = false;
             queue = 4;
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label3.classList.remove("transition");
         }
         else if (parent4forward === true) {
             parent4.classList.remove("parent-4Activated");
             parent4.classList.add("parent-4DisActivated");
             parent4forward = false;
+            //label transition disappear
+            root.style.setProperty('--transition_time', `${labelDisappear}s`);
+            label4.classList.remove("transition");
         }
         else {  //everything is in base position - can begin animation
             
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label4.classList.add("transition");
+
             //make text visible
             contact.style.visibility = "visible";
             //trigger animation
@@ -249,13 +327,13 @@ parent4.addEventListener('click', () => {
     }
 })
 
-
-
 // TRIGGERED ON ANIMATION END
 
 //parent 1
 parent1.addEventListener('animationend', () => {
 
+    console.log("line 274: queue code triggered")
+    console.log("line 262: the value of queue is currently:"+queue)
     //make all text hidden again 
     if (parent1forward === false) {
 
@@ -263,21 +341,29 @@ parent1.addEventListener('animationend', () => {
         projects.style.visibility = "hidden";
         experience.style.visibility = "hidden";
         contact.style.visibility = "hidden";
+        console.log("did line 270 play?")
     }
 
+    console.log("line 271: the value of queue is currently:"+queue)
     if (queue === 0) {
         clickable = true;
+        console.log("queue === 0 triggered (line 273)")
     }
     else { //check if something in queue
         if (queue === 1) {
             //make text visible
             about.style.visibility = "visible";
+            console.log("line 274 played: about.style.visibility");
             //trigger animation
             parent1.classList.add("parent-1Activated");
             parent1.classList.remove("parent-1DisActivated");
+            console.log("line 277 played: adding classes");
             parent1forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height1', `${totalHeight1}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label1.classList.add("transition");
         } else if (queue === 2) {
             //make text visible
             projects.style.visibility = "visible";
@@ -287,6 +373,9 @@ parent1.addEventListener('animationend', () => {
             parent2forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height2', `${totalHeight2}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label2.classList.add("transition");
         } else if (queue === 3) {
             //make text visible
             experience.style.visibility = "visible";
@@ -296,6 +385,9 @@ parent1.addEventListener('animationend', () => {
             parent3forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height3', `${totalHeight3}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label3.classList.add("transition");
         } else if (queue === 4) {
             //make text visible
             contact.style.visibility = "visible";
@@ -305,6 +397,9 @@ parent1.addEventListener('animationend', () => {
             parent4forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height4', `${totalHeight4}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label4.classList.add("transition");
         }
         //reset queue
         queue = 0;
@@ -337,6 +432,9 @@ parent2.addEventListener('animationend', () => {
             parent1forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height1', `${totalHeight1}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label1.classList.add("transition");
         } else if (queue === 2) {
             //make text visible
             projects.style.visibility = "visible";
@@ -346,6 +444,9 @@ parent2.addEventListener('animationend', () => {
             parent2forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height2', `${totalHeight2}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label2.classList.add("transition");
         } else if (queue === 3) {
             //make text visible
             experience.style.visibility = "visible";
@@ -355,6 +456,9 @@ parent2.addEventListener('animationend', () => {
             parent3forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height3', `${totalHeight3}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label3.classList.add("transition");
         } else if (queue === 4) {
             //make text visible
             contact.style.visibility = "visible";
@@ -364,6 +468,9 @@ parent2.addEventListener('animationend', () => {
             parent4forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height4', `${totalHeight4}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label4.classList.add("transition");
         }
         //reset queue
         queue = 0;
@@ -396,6 +503,9 @@ parent3.addEventListener('animationend', () => {
             parent1forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height1', `${totalHeight1}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label1.classList.add("transition");
         } else if (queue === 2) {
             //make text visible
             projects.style.visibility = "visible";
@@ -405,6 +515,9 @@ parent3.addEventListener('animationend', () => {
             parent2forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height2', `${totalHeight2}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label2.classList.add("transition");
         } else if (queue === 3) {
             //make text visible
             experience.style.visibility = "visible";
@@ -414,6 +527,9 @@ parent3.addEventListener('animationend', () => {
             parent3forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height3', `${totalHeight3}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label3.classList.add("transition");
         } else if (queue === 4) {
             //make text visible
             contact.style.visibility = "visible";
@@ -423,6 +539,9 @@ parent3.addEventListener('animationend', () => {
             parent4forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height4', `${totalHeight4}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label4.classList.add("transition");
         }
         //reset queue
         queue = 0;
@@ -455,6 +574,9 @@ parent4.addEventListener('animationend', () => {
             parent1forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height1', `${totalHeight1}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label1.classList.add("transition");
         } else if (queue === 2) {
             //make text visible
             projects.style.visibility = "visible";
@@ -464,6 +586,9 @@ parent4.addEventListener('animationend', () => {
             parent2forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height2', `${totalHeight2}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label2.classList.add("transition");
         } else if (queue === 3) {
             //make text visible
             experience.style.visibility = "visible";
@@ -473,6 +598,9 @@ parent4.addEventListener('animationend', () => {
             parent3forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height3', `${totalHeight3}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label3.classList.add("transition");
         } else if (queue === 4) {
             //make text visible
             contact.style.visibility = "visible";
@@ -482,6 +610,9 @@ parent4.addEventListener('animationend', () => {
             parent4forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height4', `${totalHeight4}px`);
+            //label transition appear
+            root.style.setProperty('--transition_time', `${labelAppear}s`);
+            label4.classList.add("transition");
         }
         //reset queue
         queue = 0;

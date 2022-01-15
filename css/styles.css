@@ -12,6 +12,7 @@
     --button_flex_ratio: 1;
     --text_flex_ratio: 5;
     --offset_percentage: 20%;
+    --transition_time: 10s;
 }
 
 /* WHOLE DOC */
@@ -115,6 +116,12 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: opacity var(--transition_time);
+}
+
+.parentLabelFront.transition {
+    opacity: 0;
 }
 
 .parent-1 {
@@ -198,9 +205,9 @@
      animation: up-to-down-then-expand-parent-1__child 1s ease-in-out forwards;
 }
 
-.parent-1Activated .parentLabelFront {
+/* .parent-1Activated .parentLabelFront {
     animation: make-header-label-dissapear 1s ease-in-out forwards;
-}
+} */
 
 @keyframes up-to-down-then-expand-parent-1__child {
     0% {
@@ -224,9 +231,9 @@
     animation: up-to-down-then-expand-parent-2__child 1s ease-in-out forwards;
 }
 
-.parent-2Activated .parentLabelFront {
+/* .parent-2Activated .parentLabelFront {
     animation: make-header-label-dissapear 1s ease-in-out forwards;
-}
+} */
 
 @keyframes up-to-down-then-expand-parent-2__child {
     0% {
@@ -251,9 +258,9 @@
 }
 
 
-.parent-3Activated .parentLabelFront {
+/* .parent-3Activated .parentLabelFront {
     animation: make-header-label-dissapear 1s ease-in-out forwards;
-}
+} */
 
 @keyframes up-to-down-then-expand-parent-3__child {
     0% {
@@ -277,9 +284,9 @@
     animation: up-to-down-then-expand-parent-4__child 1s ease-in-out forwards;
 }
 
-.parent-4Activated .parentLabelFront {
+/* .parent-4Activated .parentLabelFront {
     animation: make-header-label-dissapear 1s ease-in-out forwards;
-}
+} */
 
 @keyframes up-to-down-then-expand-parent-4__child {
     0% {
@@ -305,9 +312,9 @@
     animation: up-to-down-then-expand-reverse-parent-1__child 1s ease-in-out reverse;
 }
 
-.parent-1DisActivated .parentLabelFront {
+/* .parent-1DisActivated .parentLabelFront {
     animation: make-header-label-appear 1s ease-in-out reverse;
-}
+} */
 
 @keyframes up-to-down-then-expand-reverse-parent-1__child {
     0% {
@@ -332,9 +339,9 @@
     animation: up-to-down-then-expand-reverse-parent-2__child 1s ease-in-out reverse;
 }
 
-.parent-2DisActivated .parentLabelFront {
+/* .parent-2DisActivated .parentLabelFront {
     animation: make-header-label-appear 1s ease-in-out reverse;
-}
+} */
 
 @keyframes up-to-down-then-expand-reverse-parent-2__child {
     0% {
@@ -358,9 +365,9 @@
     animation: up-to-down-then-expand-reverse-parent-3__child 1s ease-in-out reverse;
 }
 
-.parent-3DisActivated .parentLabelFront {
+/* .parent-3DisActivated .parentLabelFront {
     animation: make-header-label-appear 1s ease-in-out reverse;
-}
+} */
 
 @keyframes up-to-down-then-expand-reverse-parent-3__child {
     0% {
@@ -384,9 +391,9 @@
     animation: up-to-down-then-expand-reverse-parent-4__child 1s ease-in-out reverse;
 }
 
-.parent-4DisActivated .parentLabelFront {
+/* .parent-4DisActivated .parentLabelFront {
     animation: make-header-label-appear 1s ease-in-out reverse;
-}
+} */
 
 @keyframes up-to-down-then-expand-reverse-parent-4__child {
     0% {
@@ -406,7 +413,7 @@
    }
 }
 
-/* KEYFRAMES FOR LABEL TEXT APPEAR AND DISSAPPEAR */
+/* KEYFRAMES FOR LABEL TEXT APPEAR AND DISSAPPEAR
 @keyframes make-header-label-dissapear {
     0% {
         opacity: 1;
@@ -429,4 +436,4 @@
     100% {
         opacity: 0;
     }
-}
+} */
