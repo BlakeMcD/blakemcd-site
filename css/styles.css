@@ -77,14 +77,31 @@ footer {
 .dates {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .dates__col1 {
     flex: 1;
+    text-align: center;
 }
 
 .dates__col2 {
     flex: 1; 
+}
+
+.education {
+    display: flex;
+    width: 100%;
+}
+
+.education__col2 {
+    flex: 1;
+    text-align: center;
+
+}
+
+.education__col3 {
+    flex: 1;
 }
 
 /* MAIN BODY */
@@ -94,6 +111,49 @@ footer {
     margin-left: 5%;
     margin-right: 5%;
 }
+
+/* PROJECTS SECTION  */
+
+h3 {
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+h4 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.projectDaintreeImages {
+    display: flex;
+}
+
+.projectDaintreeImages img{
+    flex:1;
+    width: 25%;
+    margin: 20px;
+    border-radius: var(--header_border_radius);
+}
+
+.languages-and-links {
+    display: flex;
+}
+
+.languages-and-links__languages {
+    flex: 1;
+    text-align: center;
+}
+
+.languages-and-links__links {
+    flex: 1;
+    text-align: center;
+}
+
+.projectWebscraperImages img {
+    margin: 20px;
+    border-radius: var(--header_border_radius);
+}
+
 
 /* TEXT SECTION */
 
