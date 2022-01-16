@@ -563,7 +563,7 @@ parent4.addEventListener('animationend', () => {
 
     if (queue === 0) {
         clickable = true;
-    }
+    } 
     else { //check if something in queue
         if (queue === 1) {
             //make text visible

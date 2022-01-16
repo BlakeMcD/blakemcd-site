@@ -23,6 +23,10 @@
     /* background-color: grey; */
 }
 
+footer {
+    background-color: pink;
+}
+
 /* INTRODUCTION */
 .introduction {
     margin-top: 5%;
@@ -96,7 +100,12 @@
     position: absolute;
 } */
 
-.about {
+.textSection__child {
+    width: 100%;
+    position: absolute;
+}
+
+/* .about {
     position: absolute;
 }
 
@@ -110,7 +119,7 @@
 
 .contact {
     position: absolute;
-}
+} */
 
 .grandparent {
     flex: var(--button_flex_ratio);
