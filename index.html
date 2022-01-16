@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
    <meta charset="utf-8">
-   <title>Sammy the Shark</title>
+   <title>Blake's site</title>
    <link rel="stylesheet" href="css/styles.css">
    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Quicksand&display=swap" rel="stylesheet">
    <style>
@@ -11,39 +11,80 @@
    <script src="script.js" defer></script>
   </head>
   <body>
-        <div class="introduction">
-          <p>Hi, I'm Blake.<br><br>Click on the colours to learn more about me.</p>
-        </div>
-
-        <div class="mainBody">
-          
-          <div class="grandparent">
-              <div class="parent-1">
-                <div class="parent-1__child"></div>
+      <div class="appendSpace">
+        <p>Append here</p>
+      </div>
+      <div class="introduction">
+        <p>Hi, I'm Blake.<br><br>Click on the coloured tabs to learn more about me.</p>
+      </div>
+      <div class="spacer"></div>
+      <div class="mainBody">
+        
+        <div class="grandparent">
+            <div class="parent-1">
+              <p class="parentLabelBack">About</p>
+              <div class="parent-1__child">
+                <p class="parentLabelFront">About</p>
               </div>
-              <div class="parent-2">
-                <div class="parent-2__child"></div>
-              </div>
-              <div class="parent-3">
-                <div class="parent-3__child"></div>
-              </div>
-              <div class="parent-4">
-                <div class="parent-4__child"></div>
-              </div>
-          </div>
-          <div class="textSection">
-            <div class="about">
-              <h2 class="catHeading">About Me</h2>
-              <p class="catBody"> 
-                I am a recent graduate from a 6 month, full-time full stack engineering course, looking for a Junior Software Engineering position.
-                <br><br>
-                I enjoy communicating and working with others, and I love solving puzzles.
-                <br><br>
-                Before this career change, I was in digital marketing, communications, and sales. 
-              </p>
             </div>
-            <div class="projects">
-              <h2 class="catHeading">Projects</h2>
+            <div class="parent-2">
+              <p class="parentLabelBack">Projects</p>
+              <div class="parent-2__child">
+                <p class="parentLabelFront">Projects</p>
+              </div>
+            </div>
+            <div class="parent-3">
+              <p class="parentLabelBack">Experience</p>
+              <div class="parent-3__child">
+                <p class="parentLabelFront">Experience</p>
+              </div>
+            </div>
+            <div class="parent-4">
+              <p class="parentLabelBack">Contact</p>
+              <div class="parent-4__child">
+                <p class="parentLabelFront">Contact</p>
+              </div>
+            </div>
+        </div>
+        <div class="textSection">
+          <div class="about">
+            <h2 class="catHeading">In a nutshell</h2>
+            <div class="catBody catBody1"> 
+              <p>
+              I recently graduated from a 6 month, full-time full stack software engineering course. I'm looking for a Junior Software Engineering position.
+            </p>
+              <br>
+              <p>
+              The languages I learned & practiced during the course were:
+            </p>
+            <br>
+
+            <div class="languagesList">
+              <div class="languagesList__col1">
+                <ul>
+                  <li>React</li>
+                  <li>JavaScript</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                </ul>
+              </div>
+              <div class="languagesList__col2">
+                <ul>
+                  <li>Ruby</li>
+                  <li>Ruby on Rails</li>
+                  <li>SQL</li>
+                </ul>
+              </div>
+            </div>
+              
+
+              <br>
+              Before this career change, I was in digital marketing, communications, and sales. 
+            </div>
+          </div>
+          <div class="projects">
+            <h2 class="catHeading">Projects</h2>
+              <div class="catBody catBody2">
                 <h3>Full Stack Online Store</h3>
                 <p> 
                   I built both the frontend and backend for a fictional online store called Daintree. I used React for the front end, and Ruby on Rails for the back end. The site included: 
@@ -60,39 +101,61 @@
                 <p>I used React to build an app that made an API request to The Movie Database, and displayed the information in a Netflix-like format.  Movies could be favourited, and added/removed from a favourited list. </p>
                 <h3>Photo Finder</h3>
                 <p>I built this webapp using JavaScript, HTML, and CSS. Using the search bar sent an API request to Unsplash, and then displayed the photos using CSS grid. </p>
-            </div>
-            <div class="experience">
-              <h2 class="catHeading">Career History</h2>
-                <h3>Summary</h3>
-                <div>
+              </div>
+          </div>
+          <div class="experience">
+            <h2 class="catHeading">Career History</h2>
+            <div class="catBody catBody3">
+              <h3>Summary</h3>
+
+              <div class="dates">
+                <div class="dates__col1">
                   <p class="experience__dateRange">2020 - 2021</p>
-                  <p class="experience__dateContent">Digital Marketer</p>
-                </div>
-                <div>
                   <p class="experience__dateRange">2018 - 2020</p>
-                  <p class="experience__dateContent">Communications and Marketing Officer</p>
-                </div>
-                <div>
                   <p class="experience__dateRange">2013 - 2018</p>
-                  <p class="experience__dateContent">Game and Web Developer</p>
-                </div>
-                <div>
                   <p class="experience__dateRange">2014 - 2015</p>
-                  <p class="experience__dateContent">Communications Officer</p>
-                </div>
-                <div>
                   <p class="experience__dateRange">2007 - 2012</p>
+                </div>
+                <div class="dates__col2">
+                  <p class="experience__dateContent">Digital Marketer</p>
+                  <p class="experience__dateContent">Communications and Marketing Officer</p>
+                  <p class="experience__dateContent">Game and Web Developer</p>
+                  <p class="experience__dateContent">Communications Officer</p>
                   <p class="experience__dateContent">Sales Leader and Independent Contractor</p>
                 </div>
-            </div>
-            <div class="contact">
-              <h2 class="catHeading">Get In Touch</h2>
+              </div>
               <div>
-                <p class="contactEmailEmail">Email</p>
-                <p class="contactEmailBody">blakemcd@gmail.com</p>
+                <p class="experience__dateRange">2020 - 2021</p>
+                <p class="experience__dateContent">Digital Marketer</p>
+              </div>
+              <div>
+                <p class="experience__dateRange">2018 - 2020</p>
+                <p class="experience__dateContent">Communications and Marketing Officer</p>
+              </div>
+              <div>
+                <p class="experience__dateRange">2013 - 2018</p>
+                <p class="experience__dateContent">Game and Web Developer</p>
+              </div>
+              <div>
+                <p class="experience__dateRange">2014 - 2015</p>
+                <p class="experience__dateContent">Communications Officer</p>
+              </div>
+              <div>
+                <p class="experience__dateRange">2007 - 2012</p>
+                <p class="experience__dateContent">Sales Leader and Independent Contractor</p>
               </div>
             </div>
           </div>
+          <div class="contact">
+            <h2 class="catHeading">Get In Touch</h2>
+            <div class="catBody catBody4">
+              <p class="contactEmailEmail">Email</p>
+              <p class="contactEmailBody">blakemcd@gmail.com</p>
+            </div>
+          </div>
         </div>
+      </div>
+      <!-- <div class="spacer"></div>
+      <footer>Heeeey</footer> -->
   </body>
 </html>

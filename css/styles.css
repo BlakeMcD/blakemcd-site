@@ -4,10 +4,15 @@
     --header_element_width: 100%;
     --header_border_radius: 20px;
     --header_element_expanded_width: 455%;
+    --header_element_expanded_height1: 400%;
+    --header_element_expanded_height2: 400%;
+    --header_element_expanded_height3: 400%;
+    --header_element_expanded_height4: 400%;
     --header_yoffset_factor: 1.2;
     --button_flex_ratio: 1;
     --text_flex_ratio: 5;
     --offset_percentage: 20%;
+    --transition_time: 10s;
 }
 
 /* WHOLE DOC */
@@ -26,10 +31,42 @@
     text-align: center;
 }
 
+/* SPACER */
+.spacer {
+    height: 75px;
+}
+
+/* LANGUAGES AND DATES LIST */
+.languagesList {
+    display: flex;
+    justify-content: space-between;
+}
+
+.languagesList__col1 {
+    flex: 1;
+}
+
+.languagesList__col2 {
+    flex: 1; 
+}
+
+.dates {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dates__col1 {
+    flex: 1;
+}
+
+.dates__col2 {
+    flex: 1; 
+}
+
 /* MAIN BODY */
 .mainBody {
     display: flex;
-    background-color: darkgrey;
+    /* background-color: darkgrey; */
     margin-left: 5%;
     margin-right: 5%;
 }
@@ -38,20 +75,21 @@
 
 .textSection {
     flex: var(--text_flex_ratio);
-    background-color: rgba(255, 0, 0, 0.2);
-    /* margin: 0% 15% 0% 15%; */
-    font-size: larger;
+    /* background-color: rgba(255, 0, 0, 0.2); */
     position: relative;
-    color: black;
+    color: green;
 }
 
 .catHeading {
+    padding-top: 2%;
     padding-bottom: 2%;
     text-align: center;
 }
 
 .catBody {
-    text-align: center;
+    text-align: justify;
+    margin-left: 10%;
+    margin-right: 5%;
 }
 
 /* .textSection__content {
@@ -76,7 +114,7 @@
 
 .grandparent {
     flex: var(--button_flex_ratio);
-    background-color: hsla(200, 100%, 20%);
+    /* background-color: hsla(200, 100%, 20%); */
     height: var(--header_element_height);
     position: relative;
     /* margin: 5% 10% 5% 10%; */
@@ -84,6 +122,29 @@
 }
 
 /* parent */
+
+.parentLabelBack {
+    float: left;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.parentLabelFront {
+    color: white;
+    float: left;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: opacity var(--transition_time);
+}
+
+.parentLabelFront.transition {
+    opacity: 0;
+}
 
 .parent-1 {
     background-color: darkred;
@@ -93,6 +154,7 @@
     /* left: 0%; */
     text-align: center;
     border-radius: var(--header_border_radius);
+    cursor: pointer;
 }
 
 .parent-2 {
@@ -103,6 +165,7 @@
     left:0%;
     top: calc(100% + var(--offset_percentage));
     border-radius: var(--header_border_radius);
+    cursor: pointer;
 }
 
 .parent-3 {
@@ -113,6 +176,7 @@
     left:0%;
     top: calc(200% + calc(2 * var(--offset_percentage)));
     border-radius: var(--header_border_radius);
+    cursor: pointer;
 }
 
 .parent-4 {
@@ -123,6 +187,7 @@
     left: 0%;
     top: calc(300% + calc(3 * var(--offset_percentage)));
     border-radius: var(--header_border_radius);
+    cursor: pointer;
 }
 
 /* parent-child */
@@ -166,22 +231,35 @@
      animation: up-to-down-then-expand-parent-1__child 1s ease-in-out forwards;
 }
 
+/* .parent-1Activated .parentLabelFront {
+    animation: make-header-label-dissapear 1s ease-in-out forwards;
+} */
+
 @keyframes up-to-down-then-expand-parent-1__child {
+    0% {
+        left: 0%;
+        width: 100%; 
+        height: 100%;
+    }
     50% {
         left: calc(100% + var(--offset_percentage));
         width: 100%; 
-        height: 100%;
+        height: 100px;
     }
     100% {
     left: calc(100% + var(--offset_percentage));
      width: calc(100% * var(--text_flex_ratio) - var(--offset_percentage));   
-     height: 200%;
+     height: var(--header_element_expanded_height1);
     }
 }
 
 .parent-2Activated .parent-2__child {
     animation: up-to-down-then-expand-parent-2__child 1s ease-in-out forwards;
 }
+
+/* .parent-2Activated .parentLabelFront {
+    animation: make-header-label-dissapear 1s ease-in-out forwards;
+} */
 
 @keyframes up-to-down-then-expand-parent-2__child {
     0% {
@@ -197,13 +275,18 @@
    left: calc(100% + var(--offset_percentage));
    top: calc(-100% - var(--offset_percentage));
     width: calc(100% * var(--text_flex_ratio) - var(--offset_percentage));   
-    height: 200%;
+    height: var(--header_element_expanded_height2);
    }
 }
 
 .parent-3Activated .parent-3__child {
     animation: up-to-down-then-expand-parent-3__child 1s ease-in-out forwards;
 }
+
+
+/* .parent-3Activated .parentLabelFront {
+    animation: make-header-label-dissapear 1s ease-in-out forwards;
+} */
 
 @keyframes up-to-down-then-expand-parent-3__child {
     0% {
@@ -219,13 +302,17 @@
    left: calc(100% + var(--offset_percentage));
    top: calc(-200% - calc(var(--offset_percentage)*2));
     width: calc(100% * var(--text_flex_ratio) - var(--offset_percentage));   
-    height: 200%;
+    height: var(--header_element_expanded_height3);
    }
 }
 
 .parent-4Activated .parent-4__child {
     animation: up-to-down-then-expand-parent-4__child 1s ease-in-out forwards;
 }
+
+/* .parent-4Activated .parentLabelFront {
+    animation: make-header-label-dissapear 1s ease-in-out forwards;
+} */
 
 @keyframes up-to-down-then-expand-parent-4__child {
     0% {
@@ -241,7 +328,7 @@
    left: calc(100% + var(--offset_percentage));
    top: calc(-300% - calc(var(--offset_percentage)*3));
     width: calc(100% * var(--text_flex_ratio) - var(--offset_percentage));   
-    height: 200%;
+    height: var(--header_element_expanded_height4);
    }
 }
 
@@ -251,7 +338,16 @@
     animation: up-to-down-then-expand-reverse-parent-1__child 1s ease-in-out reverse;
 }
 
+/* .parent-1DisActivated .parentLabelFront {
+    animation: make-header-label-appear 1s ease-in-out reverse;
+} */
+
 @keyframes up-to-down-then-expand-reverse-parent-1__child {
+    0% {
+        left: 0%;
+        width: 100%; 
+        height: 100%;
+    }
    50% {
     left: calc(100% + var(--offset_percentage));
     width: 100%; 
@@ -259,8 +355,8 @@
    }
    100% {
     left: calc(100% + var(--offset_percentage));
- width: calc(100% * var(--text_flex_ratio) - var(--offset_percentage));   
- height: 200%;
+    width: calc(100% * var(--text_flex_ratio) - var(--offset_percentage));   
+    height: var(--header_element_expanded_height1);
    }
 } 
 
@@ -268,6 +364,10 @@
 .parent-2DisActivated .parent-2__child {
     animation: up-to-down-then-expand-reverse-parent-2__child 1s ease-in-out reverse;
 }
+
+/* .parent-2DisActivated .parentLabelFront {
+    animation: make-header-label-appear 1s ease-in-out reverse;
+} */
 
 @keyframes up-to-down-then-expand-reverse-parent-2__child {
     0% {
@@ -283,13 +383,17 @@
    left: calc(100% + var(--offset_percentage));
    top: calc(-100% - var(--offset_percentage));
     width: calc(100% * var(--text_flex_ratio) - var(--offset_percentage));   
-    height: 200%;
+    height: var(--header_element_expanded_height2);
    } 
 }
 
 .parent-3DisActivated .parent-3__child {
     animation: up-to-down-then-expand-reverse-parent-3__child 1s ease-in-out reverse;
 }
+
+/* .parent-3DisActivated .parentLabelFront {
+    animation: make-header-label-appear 1s ease-in-out reverse;
+} */
 
 @keyframes up-to-down-then-expand-reverse-parent-3__child {
     0% {
@@ -305,13 +409,17 @@
    left: calc(100% + var(--offset_percentage));
    top: calc(-200% - calc(var(--offset_percentage)*2));
     width: calc(100% * var(--text_flex_ratio) - var(--offset_percentage));   
-    height: 200%;
+    height: var(--header_element_expanded_height3);
    }
 } 
 
 .parent-4DisActivated .parent-4__child {
     animation: up-to-down-then-expand-reverse-parent-4__child 1s ease-in-out reverse;
 }
+
+/* .parent-4DisActivated .parentLabelFront {
+    animation: make-header-label-appear 1s ease-in-out reverse;
+} */
 
 @keyframes up-to-down-then-expand-reverse-parent-4__child {
     0% {
@@ -327,6 +435,31 @@
    left: calc(100% + var(--offset_percentage));
    top: calc(-300% - calc(var(--offset_percentage)*3));
     width: calc(100% * var(--text_flex_ratio) - var(--offset_percentage));   
-    height: 200%;
+    height: var(--header_element_expanded_height4);
    }
 }
+
+/* KEYFRAMES FOR LABEL TEXT APPEAR AND DISSAPPEAR
+@keyframes make-header-label-dissapear {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes make-header-label-appear {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+} */
