@@ -36,10 +36,32 @@
     height: 75px;
 }
 
-/* FOOTER */
-/* footer {
-    background-color: grey;
-} */
+/* LANGUAGES AND DATES LIST */
+.languagesList {
+    display: flex;
+    justify-content: space-between;
+}
+
+.languagesList__col1 {
+    flex: 1;
+}
+
+.languagesList__col2 {
+    flex: 1; 
+}
+
+.dates {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dates__col1 {
+    flex: 1;
+}
+
+.dates__col2 {
+    flex: 1; 
+}
 
 /* MAIN BODY */
 .mainBody {
@@ -55,7 +77,7 @@
     flex: var(--text_flex_ratio);
     /* background-color: rgba(255, 0, 0, 0.2); */
     position: relative;
-    color: black;
+    color: green;
 }
 
 .catHeading {
