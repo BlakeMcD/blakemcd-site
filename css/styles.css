@@ -35,6 +35,26 @@ footer {
     text-align: center;
 }
 
+/* SOCIAL ICONS */
+.socialIcons {
+    margin-top: var(--header_border_radius);
+    text-align: center;
+    
+}
+
+.socialIcons a {
+    text-decoration: none; 
+}
+
+.socialIcons img {
+    width: 35px;
+}
+
+.img2 img {
+    margin-left: 20px; 
+    margin-right: 20px;
+}  
+
 /* SPACER */
 .spacer {
     height: 75px;
