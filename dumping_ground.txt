@@ -20,3 +20,38 @@
     // content.appendChild(contentBody);
  
     // textSection.appendChild(content);
+
+
+ORIGINAL COLOURS
+    .parent-1__child {
+    background-color: #0B0B0D;
+
+
+.parent-2__child {
+    background-color: #03658C;
+
+
+.parent-3__child {
+    background-color: #1C3640;
+
+
+.parent-4__child {
+    background-color: #56593C;
+
+NEW COLOURS
+
+COl 1: #001624
+COL 2: #040724
+COL 3: #04241F
+COL 4: #241D04
+
+COL 5: (not used): #240C02
+
+LIGHT VERSIONS
+
+COl 1: #003A5E
+COL 2: #09115E
+COL 3: #095E51
+COL 4: #5E4C0A
+
+COL 5: (not used): #5E1F05

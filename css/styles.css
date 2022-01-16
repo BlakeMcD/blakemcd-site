@@ -23,9 +23,9 @@
     /* background-color: grey; */
 }
 
-footer {
+/* footer {
     background-color: pink;
-}
+} */
 
 /* INTRODUCTION */
 .introduction {
@@ -184,7 +184,7 @@ h4 {
     flex: var(--text_flex_ratio);
     /* background-color: rgba(255, 0, 0, 0.2); */
     position: relative;
-    color: green;
+    color: white;
 }
 
 .catHeading {
@@ -208,21 +208,9 @@ h4 {
     position: absolute;
 }
 
-/* .about {
-    position: absolute;
+.contactEmailBody {
+    text-align: center;
 }
-
-.projects {
-    position: absolute;
-}
-
-.experience {
-    position: absolute;
-}
-
-.contact {
-    position: absolute;
-} */
 
 .grandparent {
     flex: var(--button_flex_ratio);
@@ -241,6 +229,7 @@ h4 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    color: lightgrey;
 }
 
 .parentLabelFront {
@@ -259,7 +248,7 @@ h4 {
 }
 
 .parent-1 {
-    background-color: darkred;
+    background-color: #003A5E;
     height:100%;
     width: var(--header_element_width);
     position: absolute;
@@ -270,7 +259,7 @@ h4 {
 }
 
 .parent-2 {
-    background-color: gold;
+    background-color: #09115E;
     height:100%;
     width: var(--header_element_width);
     position: absolute;
@@ -281,7 +270,7 @@ h4 {
 }
 
 .parent-3 {
-    background-color: darkgreen;
+    background-color: #095E51;
     height:100%;
     width: var(--header_element_width);
     position: absolute;
@@ -292,7 +281,7 @@ h4 {
 }
 
 .parent-4 {
-    background-color: darkblue;
+    background-color: #5E4C0A;
     height:100%;
     width: var(--header_element_width);
     position: absolute;
@@ -305,7 +294,7 @@ h4 {
 /* parent-child */
 
 .parent-1__child {
-    background-color: #0B0B0D;
+    background-color: #001624;
     height:100%;
     width: 100%;
     position: absolute;
@@ -314,7 +303,7 @@ h4 {
 } 
 
 .parent-2__child {
-    background-color: #03658C;
+    background-color: #040724;
     height:100%;
     width: 100%;
     position: absolute;
@@ -322,7 +311,7 @@ h4 {
 }
 
 .parent-3__child {
-    background-color: #1C3640;
+    background-color: #04241F;
     height:100%;
     width: 100%;
     position: absolute;
@@ -330,7 +319,7 @@ h4 {
 }
 
 .parent-4__child {
-    background-color: #56593C;
+    background-color: #241D04;
     height:100%;
     width: 100%;
     position: absolute;
