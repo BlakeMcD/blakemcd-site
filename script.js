@@ -7,7 +7,7 @@ let queue = 0;
 
 let clickable = true;
 
-let textOffset = 25;
+let textOffset = 25; 
 
 let parent1forward = false;
 let parent2forward = false;
@@ -49,19 +49,19 @@ let titleHeight = titleElement.clientHeight;
 
 let textElement1 = document.querySelector(".catBody1");
 let textHeight1 = textElement1.clientHeight;
-let totalHeight1 = titleHeight + textHeight1 + textOffset;
+let totalHeight1 = textHeight1 + textOffset;
 
 let textElement2 = document.querySelector(".catBody2");
 let textHeight2 = textElement2.clientHeight;
-let totalHeight2 = titleHeight + textHeight2 + textOffset;
+let totalHeight2 = textHeight2 + textOffset;
 
 let textElement3 = document.querySelector(".catBody3");
 let textHeight3 = textElement3.clientHeight;
-let totalHeight3 = titleHeight + textHeight3 + textOffset;
+let totalHeight3 = textHeight3 + textOffset;
 
 let textElement4 = document.querySelector(".catBody4");
 let textHeight4 = textElement4.clientHeight;
-let totalHeight4 = titleHeight + textHeight4 + textOffset;
+let totalHeight4 = textHeight4 + textOffset;
 
 
 
