@@ -17,9 +17,13 @@ let parent4forward = false;
 const labelAppear = 0.2;
 const labelDisappear = 5;
 
+const footerHeight1 = 400 + (4 * ((20/100)*100));
+// root.style.setProperty('--footer_top', `${footerHeight1}px`);
+let footerHeight2 = footerHeight1;
+
 const heading = document.querySelector("h1");
 
-const grandparent = document.querySelector('.grandparent')
+const grandparent = document.querySelector('.grandparent');
 
 const parent1 = document.querySelector('.parent-1');
 const parent2 = document.querySelector('.parent-2');
@@ -59,6 +63,10 @@ let textElement4 = document.querySelector(".catBody4");
 let textHeight4 = textElement4.clientHeight;
 let totalHeight4 = textHeight4 + textOffset;
 
+let topSectionExtra = 100;
+let topSection = document.querySelector(".topSection");
+let topSectionHeight = topSection.clientHeight + topSectionExtra;
+
 // //textElement2 Heights need the images to be loaded
 let textElement2 = document.querySelector(".catBody2");
 let textHeight2 = textElement2.clientHeight;
@@ -85,8 +93,6 @@ function incrementCounter() {
     }
 }
 
-
-
 // CLICK ON GRANDPARENT
 
 grandparent.addEventListener('click', () => {
@@ -107,7 +113,6 @@ parent1.addEventListener('click', () => {
             parent1.classList.remove("parent-1Activated");
             parent1.classList.add("parent-1DisActivated");
             parent1forward = false;
-            console.log("queue:"+queue)
             const label1 = parent1.querySelector('.parentLabelFront');
             //label transition disappear
             root.style.setProperty('--transition_time', `${labelDisappear}s`);
@@ -118,7 +123,6 @@ parent1.addEventListener('click', () => {
             parent2.classList.add("parent-2DisActivated");
             parent2forward = false;
             queue = 1;
-            console.log("line 87 the value of queue is:"+queue)
             //label transition disappear
             root.style.setProperty('--transition_time', `${labelDisappear}s`);
             label2.classList.remove("transition");
@@ -128,7 +132,6 @@ parent1.addEventListener('click', () => {
             parent3.classList.add("parent-3DisActivated");
             parent3forward = false;
             queue = 1;
-            console.log("queue:"+queue)
             //label transition disappear
             root.style.setProperty('--transition_time', `${labelDisappear}s`);
             label3.classList.remove("transition");
@@ -138,7 +141,6 @@ parent1.addEventListener('click', () => {
             parent4.classList.add("parent-4DisActivated");
             parent4forward = false;
             queue = 1;
-            console.log("queue:"+queue)
             //label transition disappear
             root.style.setProperty('--transition_time', `${labelDisappear}s`);
             label4.classList.remove("transition");
@@ -151,7 +153,6 @@ parent1.addEventListener('click', () => {
 
             //make text visible
             about.style.visibility = "visible";
-            console.log("line 102:about.style.visibility");
             //trigger animation
             parent1.classList.add("parent-1Activated");
             parent1.classList.remove("parent-1DisActivated");
@@ -159,6 +160,8 @@ parent1.addEventListener('click', () => {
 
             //change height of box
             root.style.setProperty('--header_element_expanded_height1', `${totalHeight1}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight1);
         }       
     }
 })
@@ -221,6 +224,9 @@ parent2.addEventListener('click', () => {
 
             //change height of box
             root.style.setProperty('--header_element_expanded_height2', `${totalHeight2}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight2);
+
         }       
     }
 })
@@ -283,6 +289,8 @@ parent3.addEventListener('click', () => {
 
             //change height of box
             root.style.setProperty('--header_element_expanded_height3', `${totalHeight3}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight3);
         }       
     }
 })
@@ -345,6 +353,8 @@ parent4.addEventListener('click', () => {
 
             //change height of box
             root.style.setProperty('--header_element_expanded_height4', `${totalHeight4}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight4);
         }       
     }
 })
@@ -353,9 +363,6 @@ parent4.addEventListener('click', () => {
 
 //parent 1
 parent1.addEventListener('animationend', () => {
-
-    console.log("line 274: queue code triggered")
-    console.log("line 262: the value of queue is currently:"+queue)
     //make all text hidden again 
     if (parent1forward === false) {
 
@@ -363,26 +370,23 @@ parent1.addEventListener('animationend', () => {
         projects.style.visibility = "hidden";
         experience.style.visibility = "hidden";
         contact.style.visibility = "hidden";
-        console.log("did line 270 play?")
     }
 
-    console.log("line 271: the value of queue is currently:"+queue)
     if (queue === 0) {
         clickable = true;
-        console.log("queue === 0 triggered (line 273)")
     }
     else { //check if something in queue
         if (queue === 1) {
             //make text visible
             about.style.visibility = "visible";
-            console.log("line 274 played: about.style.visibility");
             //trigger animation
             parent1.classList.add("parent-1Activated");
             parent1.classList.remove("parent-1DisActivated");
-            console.log("line 277 played: adding classes");
             parent1forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height1', `${totalHeight1}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight1);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label1.classList.add("transition");
@@ -395,6 +399,8 @@ parent1.addEventListener('animationend', () => {
             parent2forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height2', `${totalHeight2}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight2);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label2.classList.add("transition");
@@ -407,6 +413,8 @@ parent1.addEventListener('animationend', () => {
             parent3forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height3', `${totalHeight3}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight3);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label3.classList.add("transition");
@@ -419,6 +427,8 @@ parent1.addEventListener('animationend', () => {
             parent4forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height4', `${totalHeight4}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight4);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label4.classList.add("transition");
@@ -454,6 +464,8 @@ parent2.addEventListener('animationend', () => {
             parent1forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height1', `${totalHeight1}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight1);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label1.classList.add("transition");
@@ -466,6 +478,8 @@ parent2.addEventListener('animationend', () => {
             parent2forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height2', `${totalHeight2}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight2);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label2.classList.add("transition");
@@ -478,6 +492,8 @@ parent2.addEventListener('animationend', () => {
             parent3forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height3', `${totalHeight3}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight3);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label3.classList.add("transition");
@@ -490,6 +506,8 @@ parent2.addEventListener('animationend', () => {
             parent4forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height4', `${totalHeight4}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight4);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label4.classList.add("transition");
@@ -525,6 +543,8 @@ parent3.addEventListener('animationend', () => {
             parent1forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height1', `${totalHeight1}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight1);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label1.classList.add("transition");
@@ -537,6 +557,8 @@ parent3.addEventListener('animationend', () => {
             parent2forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height2', `${totalHeight2}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight2);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label2.classList.add("transition");
@@ -549,6 +571,8 @@ parent3.addEventListener('animationend', () => {
             parent3forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height3', `${totalHeight3}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight3);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label3.classList.add("transition");
@@ -561,6 +585,8 @@ parent3.addEventListener('animationend', () => {
             parent4forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height4', `${totalHeight4}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight4);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label4.classList.add("transition");
@@ -596,6 +622,8 @@ parent4.addEventListener('animationend', () => {
             parent1forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height1', `${totalHeight1}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight1);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label1.classList.add("transition");
@@ -608,6 +636,8 @@ parent4.addEventListener('animationend', () => {
             parent2forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height2', `${totalHeight2}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight2);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label2.classList.add("transition");
@@ -620,6 +650,8 @@ parent4.addEventListener('animationend', () => {
             parent3forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height3', `${totalHeight3}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight3);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label3.classList.add("transition");
@@ -632,6 +664,8 @@ parent4.addEventListener('animationend', () => {
             parent4forward = true;
             //change height of box
             root.style.setProperty('--header_element_expanded_height4', `${totalHeight4}px`);
+            //change height of footer
+            footerHeightFunction(totalHeight4);
             //label transition appear
             root.style.setProperty('--transition_time', `${labelAppear}s`);
             label4.classList.add("transition");
@@ -641,4 +675,24 @@ parent4.addEventListener('animationend', () => {
         triggerQueue = false;
     }
 })
+
+//DETERMINE HEIGHT OF FOOTER
+const footerHeightFunction = (elementsFooterHeight) => {
+    console.log("footerHeightFunction ran");
+    topSection = document.querySelector(".topSection");
+    topSectionHeight = topSection.clientHeight + topSectionExtra;
+    root.style.setProperty('--top_section_test', `${topSectionHeight}px`);
+
+    if (footerHeight1 >= elementsFooterHeight) {
+        let totalFooterHeight = topSectionHeight + footerHeight1;
+        root.style.setProperty('--footer_top', `${totalFooterHeight}px`);
+        console.log("footerHeightFunction top part ran: footer-top is:"+totalFooterHeight);
+    }
+    else {
+        let totalFooterHeight = topSectionHeight + elementsFooterHeight;
+        root.style.setProperty('--footer_top', `${totalFooterHeight}px`);
+        console.log("footerHeightFunction bottom part ran: footer-top is:"+totalFooterHeight);
+    }
+}
+
 
