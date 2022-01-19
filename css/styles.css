@@ -13,6 +13,7 @@
     --text_flex_ratio: 5;
     --offset_percentage: 20%;
     --transition_time: 10s;
+    --footer_top: 800px;
 }
 
 /* WHOLE DOC */
@@ -23,9 +24,18 @@
     /* background-color: grey; */
 }
 
-/* footer {
-    background-color: pink;
-} */
+a {
+    /* text-decoration: none; */
+    color: white;
+}
+
+footer {
+    position: absolute;
+    /* background-color: pink; */
+    width: 100%;
+    left: 0;
+    top: var(--footer_top);
+}
 
 /* INTRODUCTION */
 .introduction {
