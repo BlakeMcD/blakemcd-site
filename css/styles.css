@@ -161,6 +161,8 @@ h4 {
 
 .projectWebscraperImages {
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .projectWebscraperImages img {
@@ -174,6 +176,7 @@ h4 {
 
 .projectMoviematcherImages img {
     margin: 20px;
+    width: 92%;
     border-radius: var(--header_border_radius);
 }
 
@@ -184,7 +187,7 @@ h4 {
 .projectPhotofinderImages img {
     margin: 20px;
     border-radius: var(--header_border_radius);
-    width: 100%;
+    width: 92%;
 }
 
 
@@ -239,7 +242,7 @@ h4 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: lightgrey;
+    color: grey;
 }
 
 .parentLabelFront {
