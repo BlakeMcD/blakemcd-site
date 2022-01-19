@@ -51,10 +51,6 @@ let textElement1 = document.querySelector(".catBody1");
 let textHeight1 = textElement1.clientHeight;
 let totalHeight1 = textHeight1 + textOffset;
 
-let textElement2 = document.querySelector(".catBody2");
-let textHeight2 = textElement2.clientHeight;
-let totalHeight2 = textHeight2 + textOffset;
-
 let textElement3 = document.querySelector(".catBody3");
 let textHeight3 = textElement3.clientHeight;
 let totalHeight3 = textHeight3 + textOffset;
@@ -62,6 +58,32 @@ let totalHeight3 = textHeight3 + textOffset;
 let textElement4 = document.querySelector(".catBody4");
 let textHeight4 = textElement4.clientHeight;
 let totalHeight4 = textHeight4 + textOffset;
+
+// //textElement2 Heights need the images to be loaded
+let textElement2 = document.querySelector(".catBody2");
+let textHeight2 = textElement2.clientHeight;
+let totalHeight2 = textHeight2 + textOffset;
+
+let imgs = document.images,
+    len = imgs.length,
+    counter = 0;
+
+[].forEach.call( imgs, function( img ) {
+    if(img.complete)
+      incrementCounter();
+    else
+      img.addEventListener( 'load', incrementCounter, false );
+} );
+
+function incrementCounter() {
+    counter++;
+    if ( counter === len ) {
+        console.log( 'All images loaded!');
+        textElement2 = document.querySelector(".catBody2");
+        textHeight2 = textElement2.clientHeight;
+        totalHeight2 = textHeight2 + textOffset;
+    }
+}
 
 
 
